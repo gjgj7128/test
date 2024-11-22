@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>mi 포트폴리오</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./../css/main.css" type="text/css">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="./../js/lib/gsap.min.js" type="text/javascript"></script>
+    <script src="./../js/lib/ScrollTrigger.min.js" type="text/javascript"></script>
+    <script src="./../js/common.js" type="text/javascript"></script>
+    <script src="./../js/gsap.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="header__inner">
+                <h1 class="logo"><span class="text--reverse">m</span>I</h1>
+                <button type="button" class="menu__btn"><span class="blind">메뉴</span></button>
+                <div class="layer__wrap gnb__wrap">
+                    <nav>
+                        <ul class="gnb">
+                            <li><a href="#intro">Intro</a></li>
+                            <li><a href="#aboutMe">About Me</a></li>
+                            <li><a href="#profile">Profile</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- container -->
+        <main id="container">
+            <div id="intro" class="contents contents--intro">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <p>더 나은 미래를 향한 여정을 담은</p>
+                        <h2>PORTFOLIO</h2>
+                    </div>
+                    <div class="name">지속적인 발전을 목표로 하는 웹퍼블리셔, 허수<span class="logo"><span class="text--reverse">m</span>I</span>(미)입니다!</div>
+                </div>
+            </div>
+            <div id="aboutMe" class="contents contents--about_me">
+                <div class="title__wrap title__wrap--big rollig">
+                    <div class="rollig__item">
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                    </div>                    
+                    <div class="rollig__item">
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                        <h2>About Me</h2>
+                    </div>                    
+                </div>  
+                <div class="contents__inner">
+                    <div class="about">
+                        <h3><span>안녕하세요!</span><br/>앞으로 더 나아갈 웹퍼블리셔 허수미입니다.</h3>
+                        <p>여러 프로젝트를 경험하면서 웹표준과 웹접근성을 고려하여 작업해 왔습니다.</p>
+                        <p>어떻게 하면 더 효율적으로 구조화를 할 수 있을지 끊임없이 고민하고, 디테일을 신경 쓰며 전체적인 완성도를 올릴 수 있도록 합니다.</p>
+
+                        <p class="mt">협업을 통해 팀원들의 아이디어와 의견을 존중하고 조화를 이루는 것을 중요하게 생각합니다.</p>
+                        <p>적극적인 자세로 의견을 수렴하여 좋은 결과물을 만들기 위해 끊임없이 노력합니다.</p>
+                        <p class="mt">웹퍼블리셔로서 역량을 발휘해 프로젝트 목표에 성공적으로 달성하고자 합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="profile" class="contents contents--profile">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>Profile</h2>
+                    </div>  
+                    <div class="profile__content">
+                        <div class="profile__img">
+                            <div class="img__wrap">
+                                <img src="./../images/profile.png" alt="캐릭터 이미지" title="캐릭터 이미지"/>
+                            </div>
+                        </div>
+                        <div class="profile__right">
+                            <div class="profile__right__item contact">
+                                <h3>CONTACT</h3>
+                                <div class="email">
+                                    <b class="tit">E-Mail</b>
+                                    <p class="email__address">gjtnal7125@naver.com</p>
+                                </div>
+                            </div>
+                            <div class="profile__right__item education">
+                                <h3>EDUCATION</h3>
+                                <ul class="education__list">
+                                    <li>
+                                        <span class="date">2020.08 ~ 2020.10</span>
+                                        시각디자인(일러스트&포토샵) - 퍼스트바리스타제과제빵학원
+                                        
+                                    </li>
+                                    <li>
+                                        <span class="date">2020.11 ~ 2021.03</span>
+                                        스마트기기 UI/UX 웹디자인 - 이젠아카데미컴퓨터학원
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="profile__right__item skill">
+                                <h3>SKILLS</h3>
+                                <ul class="skill__list">
+                                    <li><img src="./../images/ico__html5.png" alt="html5" title="html5"></li>
+                                    <li><img src="./../images/ico__css.png" alt="css" title="css"></li>
+                                    <li><img src="./../images/ico__scss.png" alt="scss" title="scss"></li>
+                                    <li><img src="./../images/ico__js.png" alt="javascript(ES6)" title="javascript(ES6)"></li>
+                                    <li><img src="./../images/ico__jquery.png" alt="JQuery" title="JQuery"></li>
+                                    <li><img src="./../images/ico__adobe-photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop"></li>
+                                    <li><img src="./../images/ico__adobe-illustrator.png" alt="Adobe Illustrator" title="Adobe Illustrator"></li>
+                                    <li><img src="./../images/ico__figma.png" alt="Figma" title="Figma"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="portfolio" class="contents contents--portfolio">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>PORTFOLIO</h2>
+                        <span>* 모든 포트폴리오에는 저작권 문제 없는 이미지를 사용하였습니다.</span>
+                    </div>  
+                    <div class="portfolio__list__wrap">
+                        <ul class="portfolio__list">
+                            <li>
+                                <a href="./../../01.cloene__naver_ai_rush/html/index.html" class="title__link">
+                                    <div class="tit__wrap">
+                                        <h3>네이버 AI RUSH (클론)</h3>
+                                        <p>
+                                            AI와 관련된 스터디 사이트이며, 반응형 클론 코딩으로 진행하였습니다.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="img__wrap">
+                                    <img src="./../images/prtfolio01.png" alt="네이버 AI RUSH (클론)" title="네이버 AI RUSH (클론)"/>
+                                </div>
+                                <div class="text__area">     
+                                    <div class="project__summary">
+                                        <ul class="project__summary__list">
+                                            <li><b class="tit">작업기여도</b> 100%</li>
+                                            <li><b class="tit">작업기간</b> 약 2주</li>
+                                        </ul>
+                                    </div>
+                                    <div class="page">
+                                        <button type="button" class="dialog__btn">작업 페이지 목록 보기</button>
+                                        <dialog>
+                                            <div class="dialog__inner">
+                                                <ul class="page__list">
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/index.html">
+                                                            <b class="tit">AI RUSH(메인)</b>
+                                                            index.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/biz.html">
+                                                            <b class="tit">AI BIZ</b>
+                                                            biz.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/biz_view.html">
+                                                            <b class="tit">AI BIZ 상세</b>
+                                                            biz_view.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/study.html">
+                                                            <b class="tit">AI STUDY</b>
+                                                            study.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/study_view.html">
+                                                            <b class="tit">AI STUDY 상세</b>
+                                                            study_view.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/notice.html">
+                                                            <b class="tit">NOTICE</b>
+                                                            notice.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/notice_view.html">
+                                                            <b class="tit">NOTICE 상세</b>
+                                                            notice_view.html
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="./../../01.cloene__naver_ai_rush/html/faq.html">
+                                                            <b class="tit">FAQ</b>
+                                                            faq.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </dialog>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="./../../03.Monthly_Concert_Rankings/html/index.html" class="title__link">
+                                    <div class="tit__wrap">
+                                        <h3>콘서트 랭킹 랜딩 페이지</h3>
+                                        <p>
+                                            이 달의 콘서트 랭킹 랜딩 페이지입니다. 
+                                            키움투자자산운용 사이트 홈페이지의 부분 레이아웃을 응용해 반응형 사이트로 만들어 보았습니다.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="img__wrap">
+                                    <img src="./../images/prtfolio03.png" alt="콘서트 랭킹 랜딩 페이지" title="포트콘서트 랭킹 랜딩 페이지"/>
+                                </div>
+                                <div class="text__area">     
+                                    <div class="project__summary">
+                                        <ul class="project__summary__list">
+                                            <li><b class="tit">작업기여도</b> 100%</li>
+                                            <li><b class="tit">작업기간</b> 4일</li>
+                                        </ul>
+                                    </div>
+                                    <div class="page">
+                                        <button type="button" class="dialog__btn">작업 페이지 목록 보기</button>
+                                        <dialog>
+                                            <div class="dialog__inner">
+                                                <ul class="page__list">
+                                                    <li>
+                                                        <a href="./../../03.Monthly_Concert_Rankings/html/index.html">
+                                                            <b class="tit">메인</b>
+                                                            index.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </dialog>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="./../../02.3-day_weather_forecast/html/index.html" class="title__link">
+                                    <div class="tit__wrap">
+                                        <h3>3일간의 날씨예보</h3>
+                                        <p> 
+                                            오늘로 부터 3일간의 날씨예보를 확인 할 수 있는 날씨예보 사이트입니다.
+                                            Geolocation API와 Weather API를 사용해 현위치에 따른 날씨정보를 확인해 가능합니다.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="img__wrap">
+                                    <img src="./../images/prtfolio02.png" alt="포트폴리오" title="포트폴리오"/>
+                                </div>
+                                <div class="text__area">     
+                                    <div class="project__summary">
+                                        <ul class="project__summary__list">
+                                            <li><b class="tit">작업기여도</b> 100%</li>
+                                            <li><b class="tit">작업기간</b> 4일</li>
+                                        </ul>
+                                    </div>
+                                    <div class="page">
+                                        <button type="button" class="dialog__btn">작업 페이지 목록 보기</button>
+                                        <dialog>
+                                            <div class="dialog__inner">
+                                                <ul class="page__list">
+                                                    <li>
+                                                        <a href="./../../02.3-day_weather_forecast/html/index.html">
+                                                            <b class="tit">메인</b>
+                                                            index.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </dialog>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="./../../04.cloene__bienglo/html/index.html" class="title__link">
+                                    <div class="tit__wrap">
+                                        <h3>비앙글로 (클론)</h3>
+                                        <p>
+                                            비앙글로는 뷰티 디바이스 판매 사이트이며, 클론 코딩 진행했습니다.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="img__wrap">
+                                    <img src="./../images/prtfolio04.png" alt="비앙글로 (클론)" title="비앙글로 (클론)"/>
+                                </div>
+                                <div class="text__area">     
+                                    <div class="project__summary">
+                                        <ul class="project__summary__list">
+                                            <li><b class="tit">작업기여도</b> 100%</li>
+                                            <li><b class="tit">작업기간</b> 4일</li>
+                                        </ul>
+                                    </div>
+                                    <div class="page">
+                                        <button type="button" class="dialog__btn">작업 페이지 목록 보기</button>
+                                        <dialog>
+                                            <div class="dialog__inner">
+                                                <ul class="page__list">
+                                                    <li>
+                                                        <a href="./../../04.cloene__bienglo/html/index.html">
+                                                            <b class="tit">메인</b>
+                                                            index.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </dialog>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="./../../05.cloene__mamonde/html/index.html" class="title__link">
+                                    <div class="tit__wrap">
+                                        <h3>마몽드 (클론)</h3>
+                                        <p>
+                                            마몽드는 화장품 브랜드 사이트이며, 클론 코딩으로 진행했습니다.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="img__wrap">
+                                    <img src="./../images/prtfolio05.png" alt="마몽드 (클론)" title="마몽드 (클론)"/>
+                                </div>
+                                <div class="text__area">     
+                                    <div class="project__summary">
+                                        <ul class="project__summary__list">
+                                            <li><b class="tit">작업기여도</b> 100%</li>
+                                            <li><b class="tit">작업기간</b> 4일</li>
+                                        </ul>
+                                    </div>
+                                    <div class="page">
+                                        <button type="button" class="dialog__btn">작업 페이지 목록 보기</button>
+                                        <dialog>
+                                            <div class="dialog__inner">
+                                                <ul class="page__list">
+                                                    <li>
+                                                        <a href="./../../05.cloene__mamonde/html/index.html">
+                                                            <b class="tit">메인</b>
+                                                            index.html
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </dialog>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="contact" class="contents contents--contact">
+                <div class="contents__inner">
+                    <div class="title__wrap title__wrap--big">
+                        <h2>CONTACT</h2>
+                    </div>  
+                    <div class="contact__area">
+                        <p class="ft--bold">성장과 함께 의미있는 가치를 더할 수 있기를 바랍니다.</p>
+                        <div class="email">
+                            <b class="tit">E-Mail</b>
+                            <p class="email__address">gjtnal7125@naver.com</p>
+                            <button type="button" class="copy__btn">copy</button>
+                        </div>
+                        <p>끝까지 봐주셔서 감사합니다.</p>
+                        <p>좋은 하루 되세요☘️</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer__inner">
+                <p class="copyright">Copyright &copy; 2024 <span class="logo"><span class="text--reverse">m</span>I</span>. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

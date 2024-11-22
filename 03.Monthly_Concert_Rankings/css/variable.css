@@ -1,0 +1,64 @@
+@layer variable{
+    :root{
+
+        /* color */
+        --color--wthite :#ffffff;
+        --color--black : #000000;
+        --color--black02 : #02010a;
+        --color--darkNavy03 : #03031C;
+        --color--deepPinke1 : #E10A92;
+        --color--lightPinkf8 : #F8AAD7;
+        --color--hotPinkfc : #FC68BD;
+        --color--blue0e : #0E6BA8;
+        --color--lightBlue05 : rgb(5, 243, 255);
+        --color--lightGraye5 : rgb(229, 232, 236);
+        --color--violetae : #AE3C9F;
+        --color--violeta1 : #A1259D;
+        
+        /* color opacity */
+        --color--lightGraye5--opacity--5 : rgb(229, 232, 236,0.5);
+        --color--lightBlue05--opacity--3 : rgb(5, 243, 255,0.3);
+        --color--black--opacity--5 : rgba(0,0,0,0.5);
+        
+        /* border color */
+        --border-color--black1b :  var(--color--black1b);
+        --border-color--lightGrayd9 :  var(--color--lightGrayd9);
+
+        /* font color */
+        --font-color--wthite : var(--color--wthite);
+        --font-color--black : var(--color--black);
+        --font-color--black02 : var(--color--black02);
+        --font-color--black22 : var(--color--black22);
+        --font-color--gray8f : var(--color--gray8f);
+        
+        
+        /* font size */
+        --font-size--16 : 16px;
+        --font-size--20 : 20px;
+        --font-size--24 : 24px;
+        --font-size--32 : 32px;
+        --font-size--48 : 48px;
+        --font-size--64 : 64px;
+
+
+        /* font weight */
+        --font-weight--400 : 400;
+        --font-weight--500 : 500;
+        --font-weight--600 : 600;
+        --font-weight--700 : 700;
+
+        /* line height */
+        --line-height--24 : 24px;
+        --line-height--30 : 30px;
+        --line-height--37 : 37px;
+        --line-height--62 : 62px;
+        --line-height--80 : 80px;
+
+
+        /* layout */
+        --contents--max-width : 1240px;
+        --contents--padding : 0 20px;
+        --contents--padding-left : 20px;
+        --gnb--active: 0;
+    }
+}

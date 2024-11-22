@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클론코딩_NAVER AI RUSH</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./../css/style.css">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./../js/lib/swiper-bundle.min.js"></script>
+    <script src="./../js/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <header id="header"></header>
+
+        <!-- main -->
+        <main id="container">
+            <div class="container__inner page--study">
+                <!-- study__view -->
+                <study__viewdiv class="sub__contents sub__contents--study__view">
+                    <!-- study__view -->
+                    <section class="section--study__view">
+                        <div class="section__inner">
+                            <article>
+                                <!-- 타이틀 -->
+                                <div class="title__wrap">
+                                    <p class="category"><span>AI 스터디</span></p>
+                                    <h4>1. 초거대 AI와 하이퍼클로바X</h4>
+                                    <p class="date">2024.06.04</p>
+                                    <div class="share">
+                                        <button type="button" class="share__btn ico__box-arrow-up bi"><span class="blind">공유</span></button>
+                                    </div>
+                                </div>
+
+                                <!-- 영상 -->
+                                <div class="video">
+                                    <div class="img__wrap">
+                                        <img src="./../images/main/img04.jpg" alt="슬라이드 이미지" title="슬라이드 이미지" />
+                                    </div>
+                                </div>
+
+                                <!-- 내용 -->
+                                <div class="study__detail">
+                                    <b class="tit">학습 내용 </b>
+                                    <p>초거대 AI로 인한 우리 세상은 어떻게 변화하고 있으며, AI 시대를 맞이하는 우리는 어떻게 AI와 공생해야 할까요?</p>
+                                    <p>네이버의 초대규모 AI  HyperCLOVA X 그리고 똑똑한 사용전략에 대해  네이버클라우드 하정우 센터장님이 전하는 이야기를 들려 드립니다.</p>
+
+                                    <b class="tit">학습 목표</b>
+                                    <p>초거대 AI와 하이퍼클로바X에 대해 알아봅니다. </p>
+
+                                    <b class="tit">학습 레벨</b>
+                                    <p>AI를 모르는 분</p>
+
+                                    <b class="tit">러닝 타임: <span class="time">14:02</span></b>
+
+                                </div>
+                            </article>
+                            <div class="view__bottom">
+                                <p><a href="./biz.html" class="list__btn ico__arrow-left bi">목록으로 돌아가기</a></p>
+    
+                                <div class="view__more">
+                                    <ul class="view__more__list">
+                                        <li class="view__more__list__item view__more__list__item--prev">
+                                            <a href="#">
+                                                <div class="img__wrap">
+                                                    <img src="./../images/main/img04.jpg" alt="게시물 이미지" title="게시물 이미지" />
+                                                </div>
+                                                <div class="tit__wrap">
+                                                    <h4>제목</h4>
+                                                    <p>요약 설명</p>
+                                                    <p><span class="category">AI 스터디</span><span class="date">2024.06.04</span></p>
+                                                </div>
+                                                <div class="prev__text">
+                                                    이전 콘텐츠
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="view__more__list__item view__more__list__item--next">
+                                            <a href="#">
+                                                <div class="img__wrap">
+                                                    <img src="./../images/main/img04.jpg" alt="게시물 이미지" title="게시물 이미지" />
+                                                </div>
+                                                <div class="tit__wrap">
+                                                    <h4>제목</h4>
+                                                    <p>요약 설명</p>
+                                                    <p><span class="category">AI 스터디</span><span class="date">2024.06.04</span></p>
+                                                </div>
+                                                <div class="next__text">
+                                                    다음 콘텐츠
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script>
+        $(function(){
+            // review 슬라이드
+            var swiper = new Swiper(".section--biz__view .mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: ".swiper-button-next", 
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+</body>
+</html>

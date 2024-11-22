@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+#footer{height:$footer--height--desktop;}
+.footer__inner{
+    @include contentsCenter;
+    @include borderDirectionSolid(top);
+    @include flexCenter;
+    height: 100%;
+    text-align: center;
+}

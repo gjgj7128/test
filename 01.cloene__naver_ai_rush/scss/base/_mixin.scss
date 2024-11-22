@@ -1,0 +1,147 @@
+@use "./var" as *;
+
+// flex
+@mixin flexCenter{
+    display: flex; justify-content: center; align-items: center;
+}
+@mixin flexSpaceBetweenCenter{
+    display: flex; justify-content: space-between; align-items: center;
+}
+@mixin flexBasisCalculate($width:0px, $gap:0px, $count:0){
+    $list-spacing : calc($gap - $gap / $count);/* (gap - gap / 항목 수 )*/
+    flex-basis: calc($width - $list-spacing);
+}
+
+
+// border
+@mixin borderSolid($px, $color){
+    border:$px solid $color;
+}
+@mixin borderDirectSolid($direct, $px, $color){
+    border-#{$direct}:$px solid $color;
+}
+@mixin viewBottomLine($pos){
+    border-#{$pos} : 1px solid $border-color--lightgrayd9;
+}
+
+// list
+@mixin listBullet($width, $height, $color){
+    width: $width; height: $height; background-color: $color;
+}
+
+
+// theme
+@mixin theme($theme) {
+    @if $theme == dark {
+      background-color: $color--black; 
+      color: $color--white;
+    }
+}
+
+// response
+@mixin mobile{
+    @media screen and (max-width: #{$breakpoint--mobile}) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (max-width: #{$breakpoint--tablet}) {
+        @content;
+    }
+}
+
+
+// swiper
+@mixin swiperBtnLocateTop{
+    overflow: hidden; position: unset; width: 40px; height: 40px; margin-top: unset;
+    &::before{font-size: $font-size--40; box-sizing: border-box;}
+    &::after{display: none;}
+}
+
+// status
+@mixin hoverNone{text-decoration: unset; font-size:inherit; font-weight: inherit; color: inherit;}
+
+
+
+// sub
+@mixin subPageTitleWrapStyle($responsive:false){
+    @if $responsive == "mobile"{ 
+        h2,h3,h4{line-height: $line-height--39; font-size: $font-size--26;}
+    }
+    @else if $responsive == "tablet"{
+        font-size: $font-size--13; line-height:$line-height--22;
+        h2,h3,h4{line-height: $line-height--60; font-size: $font-size--40;}
+        .category{margin-bottom: 10px; font-size: $font-size--13;}
+    }
+    @else{ // desktop
+        font-size: 20px; font-weight: 700; line-height: 34px;
+        h2{line-height: $line-height--84; font-size: $font-size--56; font-weight: $font-weight--800;}
+        h3,h4{line-height: 70px; font-size: $font-size--56; font-weight: $font-weight--800;}
+        p{color: $font-color--black;}
+        .category{
+            line-height:28px; font-size: $font-size--18; font-weight: $font-weight--800; color: $font-color--blue;
+            span:not(:last-child){position: relative; padding-right: 15px; margin-right: 14px;
+                &::after{content: ""; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 13px; background-color: $border-color--lightgrayd9;}
+            }
+        }
+    }
+}
+
+@mixin subPageViewTitleWrapStyle($responsive:false){
+    @if $responsive == "mobile"{ 
+        .share{top: 42px; right: 2px;}
+        .share__btn::before{font-size: 23px; height: 23px;}
+    }
+    @else if $responsive == "tablet"{
+        .share{right: 3px;}
+        .share__btn::before{font-size: 30px; height: 30px;}
+    }
+    @else{ // desktop
+        position: relative;
+        .category+h3{margin-top: 7px;}
+        h3+p{margin-top: 7px;}
+        .share{position: absolute; right: 4px; top: 50px; }
+        .share__btn::before{font-size: 38px; height: 38px;}
+    }
+}
+
+@mixin subPageViewDetailStyle($responsive:false){
+    @if $responsive == "tablet"{
+        line-height: 24px; font-size: $font-size--14;
+        b.tit{ margin-bottom: 0; line-height:$line-height--22;}
+    }
+    @else{ // desktop
+        line-height: $line-height--27;
+        b.tit{display: block; margin-bottom: 4px; line-height: 28px; font-weight: $font-weight--800;}
+        p+b.tit{margin-top: 30px;}
+    }
+}
+
+@mixin subPageViewBottomStyle($responsive:false){
+    @if $responsive == "mobile"{
+        margin-top: 80px;
+    }
+    @else if $responsive == "tablet"{
+        margin-top: 60px;
+    }
+    @else{ // desktop
+        margin-top: 100px;
+    }
+}
+@mixin subPageViewBottomMoreStyle($responsive:false){
+    @if $responsive == "tablet"{
+        .tit__wrap{@include flexCenter; height: calc(100% - 34px);}
+        .view__more__list{gap: 14px; padding-top: 50px;}
+        .prev__text,.next__text{margin-top: 14px; font-size: $font-size--14; line-height: 20px;}
+    }
+    @else{ // desktop
+        @include viewBottomLine("top");
+        li{position: relative;}
+        a:hover .tit__wrap{ @include flexCenter;}
+        .tit__wrap{ display: none; flex-direction: column; position:absolute; top: 0; left: 0; width: 100%; height: calc(100% - 44px); text-align: center; color: $font-color--white; background-color:$color--black--opacity--06;}
+        .view__more__list{@include flexSpaceBetweenCenter; gap: 26px; padding-top: 100px;}
+        .prev__text,.next__text{margin-top: 20px; font-size: 22px; line-height: 24px; font-weight: $font-weight--800;}
+        .next__text{text-align: right;}
+    }
+}
+

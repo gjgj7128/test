@@ -1,0 +1,164 @@
+@layer font, common;
+
+@layer font{
+
+  /* Pretendard */
+  @font-face {
+    font-family: "Pretendard";
+    src: url("./../font/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("./../font/Pretendard-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("./../font/Pretendard-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Cormorant */
+  @font-face {
+    font-family: "Cormorant";
+    src: url("./../font/Cormorant-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cormorant";
+    src: url("./../font/Cormorant-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cormorant";
+    src: url("./../font/Cormorant-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  /* Cormorant Italic */
+  @font-face {
+    font-family: "Cormorant";
+    src: url("./../font/Cormorant-RegularItalic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+}
+
+@layer common{
+    html{overflow-x:hidden;}
+    html,body{font-family: "Pretendard","Malgun Gothic","Gulim","굴림","Dutom","돋움", sans-serif; font-style: normal; font-weight: var(--font-weight--400); font-size: var(--font-size--16); letter-spacing: -0.03rem; word-break: keep-all; color:var(--font-color--black); scroll-behavior: smooth;}
+    a,button{line-height: inherit; font: inherit; color: inherit;}
+    a:hover,button:hover{cursor: pointer;}
+    button{border: none;}
+    img{display: inline-block; width: 100%; box-sizing: border-box;}
+    ::before,::after{font: inherit; color: inherit;}
+    ::-webkit-scrollbar{width: 16px; }
+    ::-webkit-scrollbar-track{background-color: #F6F6F6;}
+    ::-webkit-scrollbar-thumb{border-radius: 20px; border: 2px solid #F6F6F6; background-color: #CCCCCC; }
+    ::-webkit-scrollbar-button{width: 0;}
+
+    /* ::placeholder{font-size: var(--font-size--16); font-weight: var(--font-weight--700); color:var(--font-color--gray70); } */
+
+    h1,h2,h3,h4,h5,h6 {font-weight: var(--font-weight--500); }
+
+    .blind{overflow: hidden; position: absolute; width: 0; height: 0; white-space: nowrap; clip-path: circle(0%); }
+    
+    /* font */
+    .ft--corm{font-family: var(--font-family--Cormorant);}
+    .ft--italic{font-style: italic;}
+    .ft--bold{font-weight: var(--font-weight--700);}
+    /* .tit{display: block; font-weight: var(--font-weight--500); color: var(--font-color--black11);} */
+  
+
+    /* ico */
+    .bi{display: flex; justify-content: space-between;}
+    /* .bi::before{font-weight:600 !important;} */
+    .ico__arrow-up-right-short::before{content: "\F145"; order: 2; margin-left: -2px; transform: rotate(45deg); font-weight:600 !important;}
+    .ico__arrow-down-short::before{content: "\F124"; order: 2;}
+    .ico__chevron-down::before{content: "\F282"; order: 2; align-self: center;}
+    /* .ico__chevron-down::before{content: "\F282"; order: 2; align-self: center;} 
+    .ico__search::before{content: "\F52A"; justify-self: center; align-self: center; vertical-align: middle;} 
+    .ico__heart::before{content: "\F417"; justify-self: center; align-self: center; vertical-align: middle;} 
+    .ico__heart-fill::before{content: "\F415"; justify-self: center; align-self: center; vertical-align: middle;} 
+    .ico__bag::before{content: "\F179"; justify-self: center; align-self: center; vertical-align: middle;} 
+    .ico__person::before{content: "\F4E1"; justify-self: center; align-self: center; vertical-align: middle;} 
+    .ico__list::before{content: "\F479"; justify-self: center; align-self: center; vertical-align: middle;}  */
+    
+
+
+    /* top btn */
+    .top__btn{z-index: 900; position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; text-align: center; font-size: var(--font-size--14); font-weight: var(--font-weight--500); border-radius: 50%; color: var(--font-color--white); background-color: var(--color--green13);}
+
+    /* cursor */
+    .more__cursor{z-index: 2000; opacity:0; display: flex; justify-content: center; align-items: center; /*top:-100%; left: -100%;*/ position: absolute; margin: -40px 0 0 -40px; width: 120px; height: 120px; border-radius: 50%; color: var(--font-color--white); background-color: var(--color--green13); transition: all 0.4s ease-out; pointer-events: none; will-change: transform;  clip-path: circle(0%);}
+    .more__cursor.show{ opacity:1; clip-path: circle(100%);}
+    
+
+    /* swiper */
+
+    /* .swiper {
+        width: 100%;
+        height: 100%;
+      } */
+/*   
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+  
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+      
+
+  @media screen and (max-width: 768px) {
+
+
+    /* top btn */
+    .top__btn{bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: var(--font-size--12);}
+  
+    /* cursor */
+    .more__cursor{display: none;}
+  }
+
+
+
+
+}

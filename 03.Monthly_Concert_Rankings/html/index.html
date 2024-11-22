@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이 달의 인기 콘서트</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./../css/index.css">
+
+    <!-- js -->
+    <script src="./../js/lib/gsap.min.js"></script>
+    <script src="./../js/lib/ScrollTrigger.min.js"></script>
+    <script src="./../js/lib/ScrollToPlugin.min.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="./../js/gsap.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="header__inner">
+                <h1>이 달의 인기 콘서트</h1>
+                <button type="button" class="menu__btn"><span class="blind">메뉴</span></button>
+                <div class="layer__wrap">
+                    <div class="layer__inner">
+                        <button type="button" class="close__btn"><span class="blind">닫기</span></button>
+                        <nav class="gnb">
+                            <ul>
+                                <!-- <li><a href="#contents01"></a></li> -->
+                                <li><a href="#contents02">추천 콘서트</a></li>
+                                <li><a href="#contents03">월간 TOP 3</a></li>
+                                <li><a href="#contents04">주요 아티스트</a></li>
+                                <!-- <li><a href="#contents05"></a></li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- container -->
+        <main id="container">
+            <section id="contents01" class="contents contents--01">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>인기 콘서트 정보</h2>
+                        <p>이번 달의 가장 인기 있는 콘서트를 소개합니다.</p>
+                        <p>놓치지 말아야 할 공연들을 지금 바로 확인하세요!</p>
+                        <button type="button" class="shortcut__btn">바로 확인하기</button>
+                    </div>
+                </div>
+            </section>
+            <section id="contents02" class="contents contents--02">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>추천 콘서트를 확인해보세요!</h2>
+                        <p>요즘 핫한 공연이 넘쳐나고, 주목할 아티스트의 콘서트는 놓치면 안 될 기회예요!</p>
+                    </div>
+                    <div class="card__list__wrap card__list--border">
+                        <ul class="card__list">
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="BOYNEXTDOOR TOUR" title="BOYNEXTDOOR TOUR"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                        <h3 class="ellipsis2">BOYNEXTDOOR TOUR</h3>
+                                        <p class="venue">인스파이어 아레나</p>
+                                        <p class="date">2024.12.14 ~ 2024.12.15</p>
+                                        <button type="button" class="link__btn">구매하러가기</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster02.jpg" alt="이문세" title="이문세"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                        <h3 class="ellipsis2">이문세</h3>
+                                        <p class="venue">대구, 김해, 수원, 고양, 청주...</p>
+                                        <p class="date">2024.03 ~</p>
+                                        <button type="button" class="link__btn">구매하러가기</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster03.jpg" alt="벤슨 분" title="벤슨 분"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                        <h3 class="ellipsis2">벤슨 분</h3>
+                                        <p class="venue">올림픽공원 올림픽홀</p>
+                                        <p class="date">2025.01.12</p>
+                                        <button type="button" class="link__btn">구매하러가기</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster04.jpg" alt="콜드플레이" title="콜드플레이"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">콜드플레이</h3>
+                                    <p class="venue">고양종합운동장 주경기장</p>
+                                    <p class="date">2025.04.16 ~ 2025.04.25</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster05.jpg" alt="ZICO LIVE" title="ZICO LIVE"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">ZICO LIVE</h3>
+                                    <p class="venue">올림픽공원 올림픽홀</p>
+                                    <p class="date">2024.11.23 ~ 2024.11.24</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster06.jpg" alt="두아 리파" title="두아 리파"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">두아 리파</h3>
+                                    <p class="venue">고척스카이돔</p>
+                                    <p class="date">2024.12.04 ~ 2024.12.05</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster07.jpg" alt="2024 권진아 연말 콘서트" title="2024 권진아 연말 콘서트"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 권진아 연말 콘서트</h3>
+                                    <p class="venue">올림픽공원 핸드볼경기장</p>
+                                    <p class="date">2024.12.13 ~ 2024.12.15</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster09.jpg" alt="2024 영탁 단독 콘서트" title="2024 영탁 단독 콘서트"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 영탁 단독 콘서트</h3>
+                                    <p class="venue">전국투어</p>
+                                    <p class="date">2024.10.25 ~ 2024.11.24</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster10.jpg" alt="2024 Wave to Earth 단독공연" title="2024 Wave to Earth 단독공연"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 Wave to Earth 단독공연</h3>
+                                    <p class="venue">블루스퀘어 마스터카드홀</p>
+                                    <p class="date">2024.11.29 ~ 2024.12.01</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="0WAVE in Seoul" title="0WAVE in Seoul"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">0WAVE in Seoul</h3>
+                                    <p class="venue">TIME AFTER TIME</p>
+                                    <p class="date">2024.11.16</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="2024 펭수 펭미팅" title="2024 펭수 펭미팅"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 펭수 펭미팅</h3>
+                                    <p class="venue">세종대학교 대양홀</p>
+                                    <p class="date">2024.12.07 ~ 2024.12.08</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="2024 성시경 연말 콘서트" title="2024 성시경 연말 콘서트"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 성시경 연말 콘서트</h3>
+                                    <p class="venue">KSPO DOME</p>
+                                    <p class="date">2024.12.27 ~ 2024.12.31</p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="contents03" class="contents contents--03">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>월간 TOP 3</h2>
+                        <p>가장 기대되는 공연!</p>
+                        <div class="tab">
+                            <ul class="tab__list">
+                                <li class="on">전체</li>
+                                <li>국내/국한</li>
+                                <li>인디</li>
+                                <li>토크/강연</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card__list__wrap">
+                        <ol class="card__list card__list--border on">
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="콜드플레이 내한공연" title="콜드플레이 내한공연"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">콜드플레이 내한공연</h3>
+                                    <p class="venue">고양종합운동장 주경기장</p>
+                                    <p class="date">2025.4.16 ~  4.25</p>
+                                    <p class="booking_rate">예매율<span class="percent">20.5%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster06.jpg" alt="2024 성시경 연말 콘서트 〈성시경〉" title="2024 성시경 연말 콘서트 〈성시경〉"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 성시경 연말 콘서트 〈성시경〉</h3>
+                                    <p class="venue">KSPO DOME</p>
+                                    <p class="date">2024.12.27 ~ 12.31</p>
+                                    <p class="booking_rate">예매율<span class="percent">10.8%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster06.jpg" alt="찰리푸스 내한공연" title="찰리푸스 내한공연"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">찰리푸스 내한공연</h3>
+                                    <p class="venue">고척스카이돔</p>
+                                    <p class="date">2024.12.7 ~  12.8</p>
+                                    <p class="booking_rate">예매율<span class="percent">9.6%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                        </ol>
+                        <ol class="card__list card__list--border">
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="콜드플레이 내한공연" title="콜드플레이 내한공연"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">콜드플레이 내한공연</h3>
+                                    <p class="venue">고양종합운동장 주경기장</p>
+                                    <p class="date">2025.4.16 ~  4.25</p>
+                                    <p class="booking_rate">예매율<span class="percent">20.5%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster06.jpg" alt="2024 성시경 연말 콘서트 〈성시경〉" title="2024 성시경 연말 콘서트 〈성시경〉"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 성시경 연말 콘서트 〈성시경〉</h3>
+                                    <p class="venue">KSPO DOME</p>
+                                    <p class="date">2024.12.27 ~ 12.31</p>
+                                    <p class="booking_rate">예매율<span class="percent">10.8%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster06.jpg" alt="찰리푸스 내한공연" title="찰리푸스 내한공연"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">찰리푸스 내한공연</h3>
+                                    <p class="venue">고척스카이돔</p>
+                                    <p class="date">2024.12.7 ~  12.8</p>
+                                    <p class="booking_rate">예매율<span class="percent">9.6%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                        </ol>
+                        <ol class="card__list card__list--border">
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="나상현씨밴드 X 유다빈밴드 〈어떤 하루〉 - 용인" title="나상현씨밴드 X 유다빈밴드 〈어떤 하루〉 - 용인"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">나상현씨밴드 X 유다빈밴드 〈어떤 하루〉 - 용인</h3>
+                                    <p class="venue">용인시 평생학습관 큰어울마당</p>
+                                    <p class="date">2024.11.16</p>
+                                    <p class="booking_rate">예매율<span class="percent">27%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="2024 죠지 콘서트 [yayuday]" title="2024 죠지 콘서트 [yayuday]"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 죠지 콘서트 [yayuday]</h3>                                
+                                    <p class="venue">블루스퀘어 마스터카드홀</p>
+                                    <p class="date">2024.10.19 ~ 10.20</p>
+                                    <p class="booking_rate">예매율<span class="percent">16.3%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster05.jpg" alt="최성 단독공연 〈PAGANISM〉" title="최성 단독공연 〈PAGANISM〉"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">최성 단독공연 〈PAGANISM〉</h3>
+                                    <p class="venue">무신사 개러지</p>
+                                    <p class="date">2024.10.20</p>
+                                    <p class="booking_rate">예매율<span class="percent">12.1%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                        </ol>
+                        <ol class="card__list card__list--border">
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt=">피식대학 너드학개론" title="피식대학 너드학개론" />
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">피식대학 너드학개론</h3>
+                                    <p class="venue">동국대학교 문화관 4층 초허당 세미나실</p>
+                                    <p class="date">2024.11.2 ~ 11.3</p>
+                                    <p class="booking_rate">예매율<span class="percent">16.5%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="2024 김창옥 토크콘서트 시즌4 - 대구" title="2024 김창옥 토크콘서트 시즌4 - 대구"/>
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 김창옥 토크콘서트 시즌4 - 대구</h3>                                
+                                    <p class="venue">영남대학교 천마아트센터 그랜드홀</p>
+                                    <p class="date">2024.12.1</p>
+                                    <p class="booking_rate">예매율<span class="percent">16%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img__wrap">
+                                        <img src="./../images/poster01.jpg" alt="2024 김창옥 토크콘서트 시즌4 - 수원" title="2024 김창옥 토크콘서트 시즌4 - 수원" />
+                                    </div>
+                                    <div class="tit__wrap">
+                                    <h3 class="ellipsis2">2024 김창옥 토크콘서트 시즌4 - 수원</h3>
+                                    <p class="venue">경기아트센터 대극장</p>
+                                    <p class="date">2024.12.8</p>
+                                    <p class="booking_rate">예매율<span class="percent">13.1%</span></p>
+                                    <button type="button" class="link__btn">구매하러가기</button>
+                                </div>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <section id="contents04" class="contents contents--04">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>주요 아티스트</h2>
+                        <p>감동적인 음악과 특별한 이야기를 가진 아티스트들을 만나보세요!</p>
+                        <span class="note">* 각 아티스트를 클릭하면 정보를 확인 할 수 있습니다.</span>
+                    </div>
+                    <div class="card__list__wrap">
+                        <ul class="card__list">
+                            <li>
+                                <article>
+                                    <div class="img__wrap">
+                                        <img src="./../images/artist01.jpg" alt="콜드플레이(Coldplay)" title="콜드플레이(Coldplay)" />
+                                        <span class="artist__name">콜드플레이(Coldplay)</span>
+                                    </div>
+                                    <div class="artist__profile">
+                                        <h3>콜드플레이(Coldplay)</h3>
+                                        <p><b class="tit">멤버:</b>크리스마틴(Chris Martin), 존 버클랜드(Jonny Buckland), 가이 베리맨(Guy Berryman), 윌 챔피언(Will Champion)</p>
+                                        <p><b class="tit">데뷔:</b>2000년</p>
+                                        <p><b class="tit">장르:</b>얼터너티브 락, 브릿 팝</p>
+                                        <p><b class="tit">콘서트 일정:</b>2025.4.16 ~ 4.25 고양종합운동장 주경기장 </p>
+                                        <p class="official_site link__btn"><a href="https://www.coldplay.com/">공식 웹사이트 바로가기</a></p>
+
+                                        <div class="biography">
+                                            <p>Coldplay는 1996년에 결성된 영국의 얼터너티브 록 밴드로, 2000년 앨범 Parachutes로 데뷔했다. 밴드는 Chris Martin(보컬, 피아노), Jonny Buckland(리드 기타), Guy Berryman(베이스), Will Champion(드럼)으로 구성되어 있다.</p>
+        
+                                            <p>Yellow로 영국 싱글 차트 4위에 오르고, Parachutes는 영국 앨범 차트 1위를 기록했다. 2005년 X&Y는 그 해 가장 많이 팔린 음반으로, 2008년 Viva la Vida로 빌보드 핫 100 1위를 차지했다. 2021년 방탄소년단과 협업한 My Universe와 Music Of The Spheres로 큰 화제를 모았다 (출처: <a href="https://vibe.naver.com/artist/3224/detail">Vibe</a>).</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <div class="img__wrap">
+                                        <img src="./../images/artist02.jpg" alt="성시경" title="성시경" />
+                                        <span class="artist__name">성시경</span>
+                                    </div>
+                                    <div class="artist__profile">
+                                        <h3>성시경</h3>
+                                        <p><b class="tit">데뷔:</b>2001년</p>
+                                        <p><b class="tit">장르:</b>발라드</p>
+                                        <p><b class="tit">콘서트 일정:</b>2025.4.16 ~ 4.25 고양종합운동장 주경기장</p>
+                                        <p class="official_site link__btn"><a href="https://www.coldplay.com/">공식 웹사이트 바로가기</a></p>
+                                    
+                                        <div class="biography">
+                                            <p>성시경은 2001년 정규 앨범 처음처럼으로 데뷔한 대한민국 가수로, 유명 작곡가들과의 작업으로 큰 주목을 받았다. 정규 2집 D’Amour에는 ‘넌 감동이었어’ 등 히트곡이 포함되어 있다. 2004년 리메이크 앨범 성시경 Remake Album을 발표했고, 2006년 타이틀 곡 ‘거리에서’로 인기를 끌었다.</p>
+    
+                                            <p>그는 드라마 OST에서도 활발히 활동하며 ‘희재’, ‘너는 나의 봄이다’ 등의 곡으로 사랑받았다. 2021년에는 10년 만에 정규 8집 *ㅅ(시옷)*을 발매했다 (출처:<a href="https://vibe.naver.com/artist/3224/detail">Vibe</a>).</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <div class="img__wrap">
+                                        <img src="./../images/artist03.jpg" alt="찰리푸스(Charlie Puth)" title="찰리푸스(Charlie Puth)" />
+                                        <span class="artist__name">찰리푸스(Charlie Puth)</span>
+                                    </div>
+                                    <div class="artist__profile">
+                                        <h3>찰리푸스(Charlie Puth)</h3>
+                                        <p><b class="tit">데뷔:</b>2015년</p>
+                                        <p><b class="tit">장르:</b>팝, 댄스</p>
+                                        <p><b class="tit">콘서트 일정:</b>2025.4.16 ~ 4.25 고양종합운동장 주경기장 </p>
+                                        <p class="official_site link__btn"><a href="https://www.coldplay.com/">공식 웹사이트 바로가기</a></p>
+                                        <div class="biography">
+                                            <p>찰리 푸스(Charlie Puth)는 미국의 싱어송라이터로, 버클리 음대를 전액 장학생으로 졸업했다. 2011년 아델의 ‘Someone Like You’ 등을 커버하며 온라인에서 인기를 얻었고, 2015년 영화 분노의 질주: 더 세븐의 OST인 ‘See You Again’이 빌보드 싱글 차트에서 12주 1위를 기록하며 큰 주목을 받았다.</p>
+        
+                                            <p>2016년에는 데뷔 앨범 Nine Track Mind를 발매하고 첫 내한공연을 진행했다. 이후 2018년 2집 Voicenote를 발표하며 타이틀 곡 ‘Patien’과 빌보드 Top 5 싱글 ‘Attention’으로 큰 인기를 얻었다. 2022년에는 세 번째 정규 앨범 Charlie를 발표하며, 선공개 싱글 ‘Light Switch’로 빌보드 핫 100 27위를 기록했다 (출처:<a href="https://vibe.naver.com/artist/3224/detail">Vibe</a>).</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="contents05" class="contents contents--05">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>더 많은 정보를 확인해보세요</h2>
+                        <p class="link__btn"><a href="#">보러 가기</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer__inner">
+                <p class="copyright">Copyright &copy; 2024 <span class="logo"><span class="text--reverse">m</span>I</span>. All rights reserved.</p>
+                <p>* 콘서트 정보는 인터파크를 통해 가져왔습니다.</p>
+                <p>* 이 사이트는 포트폴리오 용도로 제작했으며, 상업적 용도가 없습니다.</p>
+                <p>* 실제 관련 이미지들이 저작권 문제 없는 사진으로 사용하였습니다.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

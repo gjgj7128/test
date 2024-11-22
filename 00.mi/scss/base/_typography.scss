@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color--default;
+  font-style: normal;
+  font-family: "GoyangIlsan";
+  // font-family: "KOTRA_GOTHIC";
+  // font-family: "ChosunGu";
+
+  font-size: $text-size--default;
+  line-height: $line-height--default;
+  // letter-spacing: -0.05rem;
+}
+a,button{font: inherit; color: inherit;}
+::before,::after{font: inherit; color: inherit;}
+
+h1,h2,h3{font-weight: $font-weihgt--600; }
+
+h2{font-size: $font-size--30;}
+h3{font-size: $font-size--22;}
+
+// title
+.tit{display: inline-block; font-weight: $font-weihgt--600; line-height: inherit;}
+
+.title__wrap--big {
+  z-index: 0; position: absolute; top: 0; left: 20px;
+  h2{ font-size:$font-size--130; font-weight: $font-weihgt--400; opacity: 0.2;}
+}
+
+
+// responsive
+@include mobile{
+  .title__wrap--big {
+    z-index: 0; position: absolute; top: 0; left: 20px;
+    h2{ font-size:$font-size--60; font-weight: $font-weihgt--400; opacity: 0.2;}
+  }
+}

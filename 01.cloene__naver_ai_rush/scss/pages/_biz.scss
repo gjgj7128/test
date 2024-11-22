@@ -1,0 +1,321 @@
+
+// mixin
+@mixin liTitleStyle($responsive:false){
+    @if $responsive == "mobile"{
+        h3{ font-size:$font-size--15; line-height:24px;}
+    }
+    @else if $responsive == "tablet"{
+        h3{ font-size:17px; line-height:24px; margin-bottom: 5px;}
+        .team{line-height: 21px; color: $font-color--black;}
+        .team+.category{margin-top:6px;}
+        .category{
+            font-size: $font-size--13; 
+            span:not(:last-child){margin-right: 10px; padding-right: 11px;}
+        }
+    }
+    @else{ // desktop
+        a{display: block;  width: 100%; height: 100%;}
+        h3{ font-size:22px; line-height: 31px; margin-bottom: 10px;}
+        p{font-weight:$font-weight--700;}
+        .team{line-height: $line-height--26; color: $font-color--black;}
+        .team+.category{margin-top: 10px;}
+        .category{
+            font-size: $font-size--15; color:$font-color--black1a--opacity--06;
+            span:not(:last-child){
+                position: relative; margin-right: 14px; padding-right: 15px;
+                &::after{content: ''; position:absolute; top: 50%; transform: translateY(-50%); right: 0; width: 1px; height: 13px; background-color: $border-color--lightgrayd9;}
+            }
+        }
+    }
+};
+
+// biz
+.page--biz{
+    .section__inner{padding-top: 115px;}
+    section+section{margin-top: 170px;}
+    .title__wrap {
+        @include subPageTitleWrapStyle;
+    }
+
+    .sub__contents--biz{
+        .section--title{
+            overflow: hidden;
+            .swiper{
+                height:595px; 
+                padding-top: 56px; overflow-y:unset; overflow-x: clip;
+                .swiper-slide{width: fit-content;}
+                a{display: block; width: 100%; height: 100%;}
+                .img__wrap{ width: 898px; height: 505px; }
+                .img__wrap + h3{margin-top: 30px;}
+                h3{font-size: $font-size--26; line-height: 29px;}
+                h3+p{margin-top: 15px;}
+                p{ 
+                    font-weight: $font-weight--700; color: $font-color--black1a--opacity--06;
+                    span{
+                        &:not(:last-child){position: relative; margin-right: 21px; padding-right: 21px;}
+                        &::after{content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 12px; background-color: $border-color--lightgrayd9;}
+                    }
+                }
+    
+                .swiper-button-wrap{z-index: 1; position: absolute; bottom: calc(100% + 7px); right: 0; display: flex; flex-direction: row-reverse; gap: 10px;}
+                .swiper-button-next, .swiper-button-prev{@include swiperBtnLocateTop;}
+               
+            }
+        }
+
+        .section--tab{
+            .tab{ background-color: $color--white;}
+            .tab__list{
+                @include flexSpaceBetweenCenter; overflow-x:auto; 
+                padding: 50px 0; font-size: $font-size--26; color: $font-color--black1a--opacity--06;
+                li{
+                 flex-shrink: 0; padding-bottom: 12px; border-bottom: 3px solid transparent;
+                    &.on{font-weight: $font-weight--800; border-bottom-color: $border-color--black1a;  color: $font-color--black1a; box-sizing: border-box;}
+                }
+                
+            }
+
+            .biz__list{
+                display: none; align-items: flex-start; flex-wrap: wrap; gap:26px;
+                &.on{display: flex;}
+                li{
+                    padding-bottom: 50px; flex: 0 1 calc(33.333% - 17.5px);
+                    &:not(:nth-child(-n+6)){display: none;}
+                }
+                @include liTitleStyle;     
+                h3{margin-top: 22px;}          
+            }
+            .expand__btn{
+                display: block; margin: $margin--center; font-size: $font-size--40;
+                transition: $ico__arrow--transition;
+                &:hover{transform:$ico__chevron-down--hover;}
+            }
+        }
+    }
+
+    .sub__contents--biz__view{
+        .title__wrap{@include subPageViewTitleWrapStyle;}
+
+        .swiper{
+            $swiper--padding-bottom: 40px;
+            margin-top: 60px; padding-bottom: $swiper--padding-bottom;
+            .swiper-wrapper:hover + .swiper-button-wrap{
+                display: block;
+            }
+            .swiper-button-wrap{
+                display: none; 
+                &:hover{display: block;}
+            }
+            .swiper-slide{overflow: hidden; max-height: 765px; }
+            .swiper-button-next, .swiper-button-prev{
+                $swiper-button-width:96px !global;
+
+                width: $swiper-button-width; height: $swiper-button-width; margin-top: calc($swiper--padding-bottom / -2); transform: translateY(-50%); font-size: 32px; border-radius: 50%; background-color: $color--white; box-shadow:0 0 10px 0 rgba(0,0,0,.15);
+                &:hover{@extend %icoHoverTransNone;}
+            }
+            .swiper-button-prev{left: 35px;}
+            .swiper-button-next{right: 35px;}
+            .swiper-button-disabled{display: none;}
+            .swiper-pagination {bottom:0;}
+        }
+        .swiper + .biz__detail{margin-top: 40px;}
+        .biz__detail{
+            @include subPageViewDetailStyle;
+
+            .hashtag{margin-top: 60px;}
+            .hashtag__list{
+                display: flex; gap: 12px; flex-wrap: wrap; font-size: $font-size--15; font-weight: $font-weight--700; color: $font-color--black1a--opacity--06;
+                li{
+                    @include flexCenter; 
+                    height: 44px; padding:0 15px; background-color: $color--lightgrayf5;
+                }
+            }
+            .hashtag+.company__box{margin-top: 65px;}
+            .company__box{
+                border: 1px solid $border-color--lightgraydd; font-size: $font-size--20; line-height: $line-height--34;
+                a{display: flex; align-items: center; gap: 60px; width: 100%; height: 100%; padding: 60px 74px;}
+                .company__logo{ 
+                    max-width: 220px; height: 100%;
+                    img{width: 100%;}
+                }
+                .company__name{
+                    font-size:$font-size--28; line-height: 28px; font-weight: $font-weight--800;
+                    .ico__arrow-up-right{color: $font-color--blue;}
+                }
+                p+p{margin-top: 14px;}
+            }
+        }
+        .view__bottom{@include subPageViewBottomStyle;}
+        .view__more{
+            @include subPageViewBottomMoreStyle;
+
+            .tit__wrap{
+                @include liTitleStyle; 
+                .team{color: inherit !important;}
+                .category{
+                    color:$font-color--white--opacity--06;
+                    &::after{background-color: $font-color--white--opacity--06;}
+                }
+            }
+
+            
+        }
+    }
+
+
+}
+
+
+// media
+@media screen and (min-width : 1800px){
+    $swiper--padding-left-right : calc($swiper-button-width / 2 + 10px);
+
+    .page--biz{
+        .swiper{position: relative; width: calc(100% + $swiper--padding-left-right * 2); left: -$swiper--padding-left-right; padding: 0 $swiper--padding-left-right;}
+        .swiper-wrapper:hover + .swiper-button-wrap{
+            .swiper-button-prev,.swiper-button-next {opacity: 1;}
+        }
+        .swiper-button-wrap{display: block !important; 
+            &::before{content: ''; z-index: 1; position: absolute; top: 0; left: 0; width: $swiper--padding-left-right; height: 100%; background-color: $color--white;}
+            &::after{content: ''; z-index: 1; position: absolute; top: 0; right: 0; width: $swiper--padding-left-right; height: 100%; background-color: $color--white;}
+            &:hover {
+                .swiper-button-prev,.swiper-button-next {opacity: 1;}
+            }
+            .swiper-button-prev{opacity: 0; left :10px  !important; }
+            .swiper-button-next{opacity: 0; right: 10px !important;}
+
+        }
+    }
+}
+
+@include tablet{
+    .page--biz{
+        .section__inner{padding-top: 97px;}
+        section+section{margin-top: 70px;}
+        .title__wrap {
+            @include subPageTitleWrapStyle("tablet");
+        }
+
+
+        .sub__contents--biz{
+            .section--title {
+                .swiper{    
+                    overflow: unset; height:390px;
+                    .img__wrap{width: 536px; height: 302px;} 
+                    .swiper-button-wrap{gap: 4px;}
+                }
+            }
+
+            .section--tab{
+                .tab__list{
+                    position: relative; transform: translateX(-(nth($container--padding, 2))); 
+                    width: calc(100% + nth($container--padding, 2)*2);                     
+                    padding: 20px nth($container--padding, 2);  font-size: $font-size--17; justify-content: flex-start; gap:22px ;
+                    li{padding-bottom: 3px;}
+                }
+    
+                .biz__list{
+                    display: none; align-items: flex-start; flex-wrap: wrap; gap:14px;
+                    &.on{display: flex;}
+                    li{padding-bottom:61px; flex: 0 1 calc(50% - 7px);}
+                    @include liTitleStyle("tablet");
+                    h3{margin-top: 16px;}
+                }
+                .expand__btn{margin-top: -18px; font-size: $font-size--26;}
+                
+            }
+        }
+
+        .sub__contents--biz__view{
+            .title__wrap{@include subPageViewTitleWrapStyle("tablet");}
+            .swiper{
+                $swiper--padding-bottom: 26px;
+                margin-top: 40px; padding-bottom: $swiper--padding-bottom;
+                .swiper-button-next, .swiper-button-prev{
+                    $swiper-button-width:67px;
+
+                    width: $swiper-button-width; height: $swiper-button-width; margin-top: calc($swiper--padding-bottom / -2); font-size: 21px;
+                }
+                .swiper-button-prev{left: 22px;}
+                .swiper-button-next{right: 22px;}
+            }
+
+            .biz__detail{
+                @include subPageViewDetailStyle("tablet");
+
+                .hashtag__list{
+                    gap: 10px; font-size: $font-size--13;
+                    li{height: 35px; padding:0 10px;}
+                }
+                .company__box{
+                    font-size: $font-size--13; line-height: $line-height--22;
+                    a{gap: 30px; padding: 30px;}
+                    .company__name{font-size: $font-size--16; line-height: inherit;}
+                    p+p{margin-top: 7px;}
+                }
+            }
+            .view__bottom{@include subPageViewBottomStyle("tablet");}
+            .view__more{
+                @include subPageViewBottomMoreStyle("tablet");
+                .tit__wrap{@include liTitleStyle("tablet");}
+            }
+        }
+
+
+    }
+}
+
+@include mobile{
+    .page--biz{
+        .section__inner{padding-top: 45px;}
+        section+section{margin-top: 100px;}
+        .title__wrap {
+            @include subPageTitleWrapStyle("mobile");
+        }
+
+        // biz
+        .sub__contents--biz{
+            .section--title .swiper{height:233px; padding-top:50px;
+                .img__wrap{width: 315px; height: 177px;}  
+                .img__wrap + h3{margin-top: 15px;}        
+                h3{ font-size: $font-size--16; line-height: $line-height--18;}
+                h3 + p{margin-top: 10px;}
+                .swiper-button-wrap{display: none;}
+            }
+
+            .section--tab{
+                .tab{
+                    z-index:1001; position: sticky; top: 0; left: 0;
+                    &.z-indx--unset{z-index: unset;}
+                }
+                .tab__list{font-size: $font-size--15; gap:18px;}
+                .biz__list{ 
+                    gap:0;
+                    li{flex-basis: 100%; padding-bottom:48px;}
+                    @include liTitleStyle("mobile");
+                }
+                
+            }
+        }
+
+        // biz__view
+        .sub__contents--biz__view{
+            .title__wrap{@include subPageViewTitleWrapStyle("mobile");}
+            .swiper .swiper-button-wrap{display: none !important;}
+
+            .biz__detail{
+                .company__box{ 
+                    font-size: $font-size--13; line-height: $line-height--22;
+                    a{flex-direction: column; align-items: center; gap: 45px; padding: 50px 30px 30px; text-align: center; }
+                    .company__name{font-size: $font-size--20; line-height: 28px;}
+                }
+            }
+            .view__bottom{@include subPageViewBottomStyle("mobile");}
+            .view__more .tit__wrap{
+                @include liTitleStyle("mobile");
+                p{display: none;}
+            }
+        }
+
+    }
+}

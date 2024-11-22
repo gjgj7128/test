@@ -1,0 +1,111 @@
+@layer variable{
+    :root{
+
+        --color--white :#ffffff;
+        --color--black : #000000;
+        --color--black22 : #222222;
+        --color--gray66 : #666;
+        --color--graye6 : #E6E6E6;
+        --color--graye6 : #E6E6E6;
+        --color--yellow : #FCCC00;
+        
+        --color--black--opacity--03 : rgba(0,0,0,0.3);
+        
+
+        /* border color */
+        --border-color--white : var(--color--white);
+        --border-color--black : var(--color--black);
+        --border-color--graye6 : var(--color--graye6);
+
+
+        /* font color */
+        --font-color--white : var(--color--white);
+        --font-color--black : var(--color--black);
+        --font-color--black22 : var(--color--black22);
+        --font-color--gray66 : var(--color--gray66);
+        
+        
+        /* font size */
+        --font-size--12 : 12px;
+        --font-size--13 : 13px;
+        --font-size--14 : 14px;
+        --font-size--15 : 15px;
+        --font-size--16 : 16px;
+        --font-size--18 : 18px;
+        --font-size--19 : 19px;
+        --font-size--20 : 20px;
+        --font-size--24 : 24px;
+        --font-size--26 : 26px;
+        --font-size--28 : 28px;
+        --font-size--30 : 30px;
+        --font-size--34 : 34px;
+        --font-size--38 : 38px;
+        --font-size--40 : 40px;
+        --font-size--44 : 44px;
+        --font-size--50 : 50px;
+        --font-size--64 : 64px;
+
+        /* font weight */
+        --font-weight--400 : 400;
+        --font-weight--500 : 500;
+        --font-weight--600 : 600;
+        --font-weight--700 : 700;
+
+        /* line height */
+        --line-height--default : 1.4;
+        --line-height--19 : 19px;
+        --line-height--21 : 21px;
+        --line-height--23 : 23px;
+        --line-height--28 : 28px;
+        --line-height--32 : 32px;
+        --line-height--34 : 34px;
+        --line-height--38 : 38px;
+        --line-height--40 : 40px;
+        --line-height--43 : 43px;
+        --line-height--50 : 50px;
+        --line-height--54 : 54px;
+        --line-height--56 : 56px;
+        --line-height--60 : 60px;
+        --line-height--70 : 70px;
+        
+
+
+        /* layout */
+        --contents--padding : 0 50px;
+        --contents--padding-left : 50px;
+        --header-contents--padding-left : 0 50px;
+        --header-contents--padding-left : 50px;
+        --last-contents--margin-bottom : 160px;
+
+        --swiper--inner : 83.333vw;
+        --toggle-slide--transition : max-height .3s ease-in-out;
+        
+        /* logo */
+        --logo--symbol : url("./../images/common/logo_symbol.svg");
+        --logo--text : url("./../images/common/logo.svg");
+
+
+        /* responsive */
+        --tablet--width: 1023px;
+        --mobile--width: 767px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        :root{
+            /* layout */
+            --swiper--inner : 100%;
+
+        } 
+    }
+    @media screen and (max-width: 1023px) {
+        :root{
+            /* layout */
+            --contents--padding : 0 24px;
+            --contents--padding-left : 24px;
+            --header-contents--padding-left : 0 15px;
+            --header-contents--padding-left : 15px;
+            --last-contents--margin-bottom : 100px;
+
+        } 
+    }
+}

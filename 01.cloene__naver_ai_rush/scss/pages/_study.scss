@@ -1,0 +1,316 @@
+
+// mixin
+@mixin liTitleStyle($responsive:false){
+    @if $responsive == "mobile"{
+        h4{line-height: 21px; font-size: $font-size--15;}
+    }
+    @else if $responsive == "tablet"{
+        line-height: 21px; 
+        h4{margin-top: 15px; line-height: 24px; font-size: $font-size--17;}
+        p:last-of-type{
+            margin-top: 14px; font-size: $font-size--13;
+            span:not(:last-child){margin-right: 10px; padding-right: 11px;}
+        }
+    }
+    @else{ // desktop
+        line-height: $line-height--26;
+        h4{margin: 22px 0 8px; line-height: 31px; font-size: $font-size--22;}
+        p:nth-of-type(1){color: $font-color--black;}
+        p:last-of-type{
+            margin-top: 16px; line-height: 1; font-size: $font-size--15; font-weight: $font-weight--700; color:$font-color--black1a--opacity--06;
+            span:not(:last-child){
+                position: relative; margin-right: 14px; padding-right: 15px;
+                &::after{content: ''; position:absolute; top: 50%; transform: translateY(-50%); right: 0; width: 1px; height: 13px; background-color: $border-color--lightgrayd9;}
+            }
+        }
+    }
+};
+
+@mixin curriculumListStyle($responsive:false){
+    @if $responsive == "tablet"{
+        @include flexBasisCalculate(25%,10px,4);
+    }
+    @else{ // desktop
+        @include flexBasisCalculate(25%,26px,4);  flex-grow:1;
+    } 
+};
+
+// study
+.page--study{
+    .section--title{overflow: hidden;}
+    .sub__contents__inner{ 
+        position: relative; z-index:1; background-color: $color--white;
+        section:last-child{padding-bottom: 150px;}
+    }
+    .section__inner{padding-top: 30px;}
+    section+section{margin-top: 150px;}
+    
+    .title__wrap {
+        @include subPageTitleWrapStyle;
+    }
+
+    h4{font-weight: $font-weight--800;}
+
+    // study
+    .sub__contents--study{
+        $section--start--height : 100vh;
+        padding-bottom: $section--start--height;
+        .title__wrap { @include flexSpaceBetweenCenter; }
+        .curriculum__btn{width: 234px; height: 70px; align-self:flex-end; margin-bottom: 10px; font-size: $font-size--20; font-weight: $font-weight--800; border: 2px solid $border-color--blue; color: $font-color--blue;}
+        
+        .curriculum{display:none; padding-top: 90px;}
+        .curriculum__list{gap: 26px;
+            .swiper-slide{ 
+                @include curriculumListStyle;
+                &:nth-child(1) .curriculum__list__item__header{background-position: left center;}
+                &:nth-child(2) .curriculum__list__item__header{background-position: 35% center;}
+                &:nth-child(3) .curriculum__list__item__header{background-position: 60% center;}
+                &:nth-child(4) .curriculum__list__item__header{background-position: right center;}
+            } 
+            .curriculum__list__item__header{
+                padding: 30px; color: $font-color--white; background-image: $color--point-gradient--revese; background-size: 1290px;
+                span{display: block; font-size: $font-size--18; margin-bottom: 17px;}
+                h3{display: block; line-height: $line-height--39; font-size: $font-size--26; font-weight: $font-weight--800;}
+            }
+            ul{
+                line-height: $line-height--27; font-size: $font-size--18; font-weight: $font-weight--700; background-color: #FAFAFA;
+                li{
+                    display: flex; align-items: center; padding:15px 24px; min-height: 100px;
+                    &:not(:last-child){border-bottom:2px dotted #DFDFDF;}
+                }
+                a{
+                    width: 100%; height: 100%;
+                    &:hover{font-weight: $font-weight--800; text-decoration:1px solid underline; text-underline-offset:6px;}
+                }
+                
+            }
+            .curriculum__list__item--step04 a{pointer-events: none; cursor: auto; color: $font-color--black1a--opacity--02;}
+        }
+        .swiper-pagination{display: none;}
+        .curriculum__step-start{
+            margin-top: 60px; padding-bottom: 20px; line-height: $line-height--30; font-size: $font-size--18; font-weight: $font-weight--800; 
+            p{
+                @include curriculumListStyle; mix-blend-mode:difference; background-image: $color--point-gradient--revese;  color: transparent; -webkit-background-clip: text;
+                position: relative; display: flex; gap: 12px; text-wrap: nowrap; flex-grow: 1; flex-shrink: 0; align-items: center; margin-right: 15px;
+                &::before{order: 3; position: absolute; top: 0; right: 0; width: 20px; font-size: 28px;  background-image: $color--point-gradient--revese; -webkit-background-clip: text; background-size: 1290px; background-position: right center;}
+                &::after{content: ""; position: relative; top: 0; right: 0; width:100%; height: 2px; display: block; margin-left: 0; background-image: $color--point-gradient--revese; background-size: 1290px; background-position: right center;}
+                
+                &:not(:last-child){margin-bottom: 16px; margin-left: 24px;}
+                &:last-child{margin-left: 8px;}
+                @for $i from 1 to 5 {
+                    &:nth-child(#{$i}){padding-left: calc(calc(25% + 13px) * calc(#{$i} - 1));}
+                }
+                
+                
+            }
+        }
+
+        section[class^="section--step"]{
+            &:not(:last-child){padding-bottom: 70px;}
+            .title__wrap{
+                padding: 50px 0 75px; border-top: 1px solid $border-color--darkgray;
+                span{line-height: $line-height--28; font-size: $font-size--22;}
+                h3{ margin-top: 25px; line-height: $line-height--75; font-size: $font-size--50; font-weight: $font-weight--800;}
+                p{  line-height: 38px; font-size: $font-size--25; font-weight: $font-weight--700;}
+            } 
+
+            [class*="__list__wrap"]{
+                .step01__list{display: flex; align-items:flex-start; flex-wrap: wrap; gap: 26px;}
+                li{@include flexBasisCalculate(33.333%, 26px, 3);}
+                @include liTitleStyle;
+                
+            }
+        }
+        
+        .section--start{
+            @include flexCenter;
+            // display: none;
+            z-index:0; position: fixed; bottom: 0; left: 0; width: 100%; height: $section--start--height; line-height: 37px; font-size: $font-size--22; font-weight: $font-weight--700; color: $font-color--white; background-color:#2a005c;
+            
+            .title__wrap{margin-top: -68px; flex-direction: column;
+                p{color: inherit;}
+            }
+            .logo__img{
+                width:247px; height: 82px;
+                background: url("https://mkt-cdn.pstatic.net/mkt/2024/05/airush/assets/img/sp_svg.svg#img_banner_title") no-repeat center center /243px 82px;
+                margin-bottom: 45px; text-align: right; font-size: 35px; font-weight: $font-weight--900;}
+            .start__btn{margin-top: 48px;}
+        }
+    }
+
+    // study__view
+    .sub__contents--study__view{
+        .title__wrap{
+            @include subPageViewTitleWrapStyle;
+            .date{margin-top: 25px; font-size: $font-size--16; line-height: 1; color: $font-color--black1a--opacity--06;}
+        }
+        .video{
+            margin-top: 60px;
+            .img__wrap{max-height: 765px;}
+        } 
+        .video + .study__detail{margin-top: 40px;}
+        .study__detail{
+            @include subPageViewDetailStyle;
+            .time{font-weight:$font-weight--400;}
+        }
+        .view__bottom{@include subPageViewBottomStyle;}
+        .view__more{
+            @include subPageViewBottomMoreStyle; @include liTitleStyle;
+            p:nth-of-type(1){color: inherit !important;}
+            p:nth-of-type(2){
+                color:$font-color--white--opacity--06;
+                &::after{background-color: $font-color--white--opacity--06;}
+            }
+        }
+    }
+
+}
+
+//media
+@include tablet{
+    .page--study{
+        .sub__contents__inner{
+            position: relative; z-index:1; background-color: $color--white;
+            section:last-child{padding-bottom: 80px;}
+        }
+        section+section{margin-top: 30px;}
+        .section--title>.section__inner{padding-top: 97px;}
+        
+        .title__wrap {@include subPageTitleWrapStyle("tablet");}
+
+        // study
+        .sub__contents--study{
+            $section--start--padding : (82px 0);
+            $section--start--height : calc(392px + nth($section--start--padding,1) *2);
+            padding-bottom: $section--start--height;
+            .curriculum__btn{width: 177px; height: 50px; font-size: $font-size--15; border-width: 1px;}
+        
+            .curriculum{
+                padding-top: 40px; 
+                .swiper{overflow: auto; position: relative; left: -(nth($container--padding,2)); width: calc(100% + nth($container--padding,2) * 2); padding:$container--padding; /*padding-left:nth($container--padding,2); padding: 40px nth($container--padding,2) 0;*/ gap: 10px;}
+            }
+            
+            .curriculum__list{
+                min-width:calc($container--width - nth($container--padding, 2) * 2 - 10px); gap: 10px;
+                .swiper-slide{@include curriculumListStyle("tablet");}
+                .curriculum__list__item__header{
+                    padding:20px; 
+                    span{font-size: $font-size--13; margin-bottom: 10px;}
+                    h3{line-height:24px; font-size: $font-size--16;}
+                }
+                ul{
+                    line-height: 23px; font-size: $font-size--15;
+                    li{display: flex; align-items: center; min-height: 78px;}
+                    a:hover{@include hoverNone;}
+                }
+            }
+            .curriculum__step-start{
+                min-width:calc($container--width - nth($container--padding, 2) * 2 - 10px); gap: 10px; align-items: flex-start; margin-top: 30px; font-size: $font-size--13;
+                p{
+                    @include curriculumListStyle("tablet");
+                    &:not(:last-child){margin-bottom: 13px;}
+                }
+            }
+            .section--title+section{margin-top: 70px;}
+            section[class^="section--step"]{
+                &:not(:last-child){padding-bottom: 0;}
+                .title__wrap{
+                    padding: 40px 0; align-items: flex-start;
+                    span{ font-size: $font-size--14;}
+                    h3{ margin-top: 10px; line-height: $line-height--36; font-size: $font-size--24;}
+                    p{  line-height: 23px; font-size: $font-size--15;}
+                } 
+    
+                [class*="__list__wrap"]{
+                    // padding-bottom: 20px;
+                    .step01__list{gap: 14px;}
+                    li{@include flexBasisCalculate(50%, 14px, 2); margin-bottom: 50px;}
+                    @include liTitleStyle("tablet");
+                }
+            }
+
+
+            .section--start{
+                height: $section--start--height; padding: $section--start--padding; line-height: $line-height--22; font-size: $font-size--13;
+
+                .logo__img{
+                    width:197px; height: 67px; 
+                    background-size: 197px 67px;
+                    margin-bottom: 37px; font-size: 20px;}
+                .start__btn{margin-top: 22px;}
+            }
+        }    
+
+        // study__view
+        .sub__contents--study__view{
+            .title__wrap{
+                @include subPageViewTitleWrapStyle("tablet");
+                .date{margin-top: 15px; font-size: $font-size--13;}
+            }
+            .video{position: relative; left: -(nth($container--padding,2)); width: calc(100% + nth($container--padding,2) * 2)}
+            .study__detail{@include subPageViewDetailStyle("tablet");}
+            .view__bottom{@include subPageViewBottomStyle("tablet");}
+            .view__more{@include subPageViewBottomMoreStyle("tablet"); @include liTitleStyle("tablet");}
+        }
+
+    }
+}
+
+@include mobile{
+    .page--study{
+        
+        .title__wrap {
+            flex-direction: column; align-items: flex-start;
+            @include subPageTitleWrapStyle("mobile");
+        }
+
+        // study
+        .sub__contents--study{
+            $section--start--height:538px;
+            padding-bottom:$section--start--height;
+            .section--title{ 
+                >.section__inner{padding-top: 45px;}
+                .title__wrap{gap: 40px; align-items: flex-start;}
+            } 
+            .curriculum__btn{width: 155px; height: 44px; margin-bottom: 0; align-self:flex-start; font-size: $font-size--13;}
+            .curriculum{
+                padding-bottom: 40px; gap: 0;
+                .swiper{overflow: hidden; padding-right: 0; padding-bottom: 26px;}
+            }
+            .curriculum__list{ gap: 0;}
+            .swiper-pagination{display: block;}
+            .swiper-scrollbar{display: none;}
+            .curriculum__step-start{display: none;}
+
+            section[class^="section--step"]{
+                
+                .title__wrap{
+                    padding: 30px 0 20px;
+                    span{ font-size: $font-size--13;}
+                    h3{ margin-top: 10px; line-height: $line-height--30; font-size: $font-size--20;}
+                    p{ margin-top: 10px; line-height: 20px; font-size: $font-size--13;}
+                } 
+    
+                [class*="__list__wrap"]{
+                    .step01__list{gap: 0;}
+                    li{@include flexBasisCalculate(100%, 0px, 1); margin-bottom: 44px;}
+                    @include liTitleStyle("mobile");
+                }
+            }
+            .section--start{
+                height: $section--start--height; text-align: center;
+                .title__wrap{align-items: center; margin-top: 0;}
+                .logo__img{width:150px; height: 50px; margin-bottom: 25px; font-size: $font-size--13; background-size: 150px 50px;}
+                .start__btn{margin-top: 25px;}
+            }
+            
+        }
+        
+        // study__view
+        .sub__contents--study__view{
+            .title__wrap{@include subPageViewTitleWrapStyle("mobile");}
+            .view__bottom{@include subPageViewBottomStyle("mobile"); @include liTitleStyle("mobile");}
+            .view__more .tit__wrap p{display: none;}
+        }
+    }
+}

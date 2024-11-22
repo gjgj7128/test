@@ -1,0 +1,88 @@
+@layer variable{
+    :root{
+
+        --color--white :#ffffff;
+        --color--black : #000000;
+        --color--gray66 : #666666;
+        --color--gray99 : #999999;
+        --color--lightGraydc : #DCDCDC;
+        --color--green13 : #133b00;
+        --color--whitefa : #FAFAFA;
+
+        /* border color */
+        --border-color--lightGraydc : var(--color--lightGraydc);
+
+        /* font color */
+        --font-color--white : var(--color--white);
+        --font-color--black : var(--color--black);
+        --font-color--gray66 : var(--color--gray66);
+        --font-color--gray99 : var(--color--gray99);
+        --font-color--green13 : var(--color--green13);
+
+
+        /* font family */
+        --font-family--Cormorant : "Cormorant", sans-serif;
+        
+        /* font size */
+        --font-size--12 : 12px;
+        --font-size--13 : 13px;
+        --font-size--14 : 14px;
+        --font-size--15 : 15px;
+        --font-size--16 : 16px;
+        --font-size--18 : 18px;
+        --font-size--20 : 20px;
+        --font-size--22 : 22px;
+        --font-size--24 : 24px;
+        --font-size--30 : 30px;
+        --font-size--36 : 36px;
+        --font-size--40 : 40px;
+        --font-size--46 : 46px;  
+        --font-size--70 : 70px;
+        --font-size--90 : 90px;
+        --font-size--100 : 100px;
+
+
+        /* font weight */
+        --font-weight--400 : 400;
+        --font-weight--500 : 500;
+        --font-weight--700 : 700;
+        --font-weight--800 : 800;
+
+
+        /* line height */
+        --line-height--16 : 16px;
+        --line-height--18 : 18px;
+        --line-height--20 : 20px;
+        --line-height--21 : 21px;
+        --line-height--24 : 24px;
+        --line-height--26 : 26px;
+        --line-height--27 : 27px;
+        --line-height--33 : 33px;
+        --line-height--36 : 36px;
+        --line-height--39 : 39px;
+        --line-height--54 : 54px;
+        --line-height--60 : 60px;
+        --line-height--69 : 69px;
+        --line-height--99 : 99px;
+        --line-height--105 : 105px;
+        --line-height--150 : 150px;
+
+
+
+        /* layout */
+        --header--height : 100px;
+        --max-width--12 : 1240px;
+        --max-width--17 : 1700px;
+        --max-width--18 : 1820px;
+        --inner-width--90 : 90%;
+        --inner-width--95 : 95%;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        :root{
+            /* layout */
+            --header--height : 70px;
+        }
+    }
+}

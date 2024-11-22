@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+// 고양일산체
+@font-face {
+    font-family: 'GoyangIlsan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangIlsan.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// 코트라 고딕체
+// @font-face {
+//     font-family: 'KOTRA_GOTHIC';
+//     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// 조선굴림체
+// @font-face {
+//     font-family: 'ChosunGu';
+//     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }

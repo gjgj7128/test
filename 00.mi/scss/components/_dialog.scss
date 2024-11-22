@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the dialog component.
+// -----------------------------------------------------------------------------
+
+dialog{
+    @include borderAllSolid;  
+    display: none; width: 100%; padding: 0; margin: 0; 
+    background-color: $color--whitefb;
+    &.on{display: block;}
+}
+.dialog__inner{
+  li{
+    &:not(:first-child){@include borderDirectionSolid(top)}  
+    a{ 
+      padding: 10px 8px;
+      width: 100%; 
+      @include on-event {
+        background-color: $color--sky88 ;
+        text-decoration:none;
+      }
+    }
+  }
+  
+}

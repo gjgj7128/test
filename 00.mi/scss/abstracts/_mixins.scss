@@ -1,0 +1,117 @@
+@use "./variables" as *;
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+// 추가
+@mixin contentsCenter{
+  max-width: $max-width; width: 100%; margin: $contents--center; padding: $contents--padding;
+}
+
+@mixin flexSpaceBtweenCenter($gap:unset){
+  display: flex; justify-content: space-between; align-items: center; gap:$gap;
+}
+@mixin flexCenter($gap:unset){
+  display: flex; justify-content: center; align-items: center; gap:$gap;
+}
+@mixin flexAlignCenter($gap:unset){
+  display: flex; align-items: center; gap:$gap;
+}
+
+@mixin borderAllSolid($width: 1px, $color: $border-color--default){
+  border: $width solid $color;
+}
+@mixin borderDirectionSolid($direction, $width: 1px, $color: $border-color--default){
+  border-#{$direction}: $width solid $color;
+}
+
+// 뒤집기
+@mixin rotateYReverse($rotateY:$transform--reverseY){
+  transform: rotateY($rotateY);
+}
+@mixin rotateXReverse($rotateX:-90deg){
+  transform: rotateX($rotateX);
+}
+
+// 로고
+$logo-reverse--animation: reverseY 0.5s ease 0.5s both;
+@mixin logoReverse($font-size: $logo--size--desktop, $animation:$logo-reverse--animation){
+  font-size: $font-size; 
+  animation:$animation;
+}
+
+// keyframes
+@keyframes reverseY{
+  to{@include rotateYReverse(0deg);}
+  from{@include rotateYReverse;}
+}
+@keyframes reverseX {
+  from{@include rotateXReverse;}
+  to{@include rotateXReverse(0deg);}
+
+}
+
+
+
+@mixin titRightBorder($gap:10px,$padding-right:8px,$width:1px,$height:12px){
+  @include flexAlignCenter($gap);
+  .tit{
+    position: relative; padding-right: $padding-right;
+    &::after{content: ""; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: $width; height:$height; background-color: $border-color--default;}
+  }
+}
+
+
+
+// 반응형
+@mixin tablet{
+  @media screen and (max-width: $tablet--width) {
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media screen and (max-width: $mobile--width) {
+    @content;
+  }
+}
+
+
+@mixin mobile412{
+  @media screen and (max-width: $mobile02--width) {
+    @content;
+  }
+}

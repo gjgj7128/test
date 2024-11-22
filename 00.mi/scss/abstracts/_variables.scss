@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// color
+/// @type Color
+$color--white : #ffffff !default;
+$color--whitefb : #FBFBFF !default;
+$color--whiteff : #FFFBFA !default;
+$color--black01 : #011014 !default;
+$color--gray80 : #808687 !default;
+$color--sky15 : #15C9FF !default;
+$color--sky88 : #88E2FF !default;
+$color--green23 : #23D15D !default;
+
+
+
+// border color
+$border-color--gray80 : $color--gray80 !default;
+
+
+// transform
+$transform--reverseY : -180deg;
+$transform--rotateY--reverse : rotateY($transform--reverseY);
+
+
+// margin
+$margin--center:0 auto;
+
+// padding
+$padding-left--10: 10px;
+$padding--0_10: 0 10px;
+$padding--0_20: 0 20px;
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1440px !default;
+
+$contents--center: $margin--center !default;
+$contents--padding: $padding--0_20 !default;
+
+// header
+$header--height--desktop : 90px !default;
+$header--height--mobile : 60px !default;
+$logo--size--desktop: 40px !default;
+$logo--size--mobile: 30px !default;
+
+$logo--text : "Im"; // 로고
+
+// footer
+$footer--height--desktop : 60px !default;
+// $footer--height--mobile : 60px;
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1023px,
+) !default;
+
+
+// responseive
+$min--width:  map-get($map:$breakpoints, $key:small);
+$mobile--width: map-get($map:$breakpoints, $key:medium);
+$mobile02--width: 412px;
+$tablet--width: map-get($map:$breakpoints, $key:large);
+// $desktop--width : 
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+
+
+// font size
+$font-size--16: 16px;
+$font-size--22: 22px;
+$font-size--30: 30px;
+$font-size--60: 60px;
+$font-size--130: 130px;
+
+
+// font weihgt
+$font-weihgt--400 : 400;
+$font-weihgt--500 : 500;
+$font-weihgt--600 : 600;
+$font-weihgt--700 : 700;
+
+
+// line height
+$line-height--46: 46px;
+
+
+
+// button
+$button--padding--default: $padding--0_10 !default;
+
+
+// body 기본 설정 값
+$text-size--default : $font-size--16 !default;
+$text-color--default : $color--black01 !default;
+$border-color--default : $border-color--gray80 !default;
+$line-height--default : 1.4 !default;
+
+
+

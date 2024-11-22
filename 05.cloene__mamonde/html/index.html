@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클론_마몽드</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./../css/index.css">
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./../js/lib/gsap.min.js"></script>
+    <script src="./../js/lib/ScrollTrigger.min.js"></script>
+    <script src="./../js/common.js"></script>
+    <script src="./../js/gsap.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="header__inner">
+                <!-- 로고 -->
+                <h1 class="logo"><a href="index.html"><span class="blind">MAMONDE</span></a></h1>
+
+                <!-- util -->
+                <div class="util__menu">
+                    <ul class="util__menu__list">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">매장찾기</a></li>
+                    </ul>
+                    <button class="search__btn bi ico__search"><span class="blind">검색</span></button>
+                </div>
+
+                <!-- 메뉴 -->
+                <button type="button" class="menu__btn bi ico__list"><span class="blind">메뉴</span></button>
+                <div class="gnb__wrap layer__wrap">
+                    <div class="gnb__wrap__inner">
+                        <div class="layer__header">
+                            <h1 class="nav__logo"><span class="blind">MAMONDE</span></h1>
+                            <div class="right">
+                                <p><a href="#" class="bi ico__person"><span class="blind">마이페이지</span></a></p>
+                                <button type="button" class="bi ico__x close__btn"><span class="blind">닫기</span></button>
+                            </div>
+                        </div>
+                        <div class="layer__container">
+                            <nav>
+                                <ul class="gnb">
+                                    <li>
+                                        <a href="#">OUR STORY <i class="ico__plus"><span class="blind">하위 메뉴 열기</span></i></a>
+                                        <div class="depth02">
+                                            <div class="depth02__left">
+                                                <span>Mamonde</span>
+                                                <ul class="depth02__list">
+                                                    <li><a href="#">브랜드 스토리</a></li>
+                                                    <li><a href="#">라운드</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="depth02__right">
+                                                <div class="img__link">
+                                                    <a href="#">
+                                                        <div class="img__wrap">
+                                                            <img src="./../images/img_04.jpg" alt="Hyper Flora™으로 피어나는 나다운 아름다움" title="Hyper Flora™으로 피어나는 나다운 아름다움"/>
+                                                        </div>
+                                                        <p>Hyper Flora™으로 피어나는 나다운 아름다움</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">BEST&NEW</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">PRODUCT <i class="ico__plus"><span class="blind">하위 메뉴 열기</span></i></a>
+                                        <div class="depth02">
+                                            <div class="depth02__left">
+                                                <p class="ft--bold"><a href="#" class="bi ico__chevron-right">스킨케어 전체보기</a></p>
+                                                <ul class="depth02__list">
+                                                    <li>
+                                                        <a href="#" class="tit">제품 유형별 <i class="ico__plus"><span class="blind">하위 메뉴 열기</span></i></a>
+                                                        <div class="depth03">
+                                                            <ul class="depth03__list">
+                                                                <li><a href="#">스킨 / 로션</a></li>
+                                                                <li><a href="#">에센스/앰플/세럼</a></li>
+                                                                <li><a href="#">크림</a></li>
+                                                                <li><a href="#">마스크</a></li>
+                                                                <li><a href="#">클렌징</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tit">피부 고민별 <i class="ico__plus"><span class="blind">하위 메뉴 열기</span></i></a>
+                                                        <div class="depth03">
+                                                            <ul class="depth03__list">
+                                                                <li><a href="#">수분 / 보습</a></li>
+                                                                <li><a href="#">안티에이징</a></li>
+                                                                <li><a href="#">모공</a></li>
+                                                                <li><a href="#">각질</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="depth02__right">
+                                                <div class="img__link">
+                                                    <a href="#">
+                                                        <div class="img__wrap">
+                                                            <img src="./../images/img_04.jpg" alt="더 강력해진 화잘먹 치트키를 만나보세요!" title="더 강력해진 화잘먹 치트키를 만나보세요!"/>
+                                                        </div>
+                                                        <p>더 강력해진 화잘먹 치트키를 만나보세요!</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <ul class="sns__list">
+                                <li class="bi ico__facebook"><a href="#"><span class="blind">facebook</span></a></li>
+                                <li class="bi ico__instagram"><a href="#"><span class="blind">instagram</span></a></li>
+                                <li class="bi ico__youtube"><a href="#"><span class="blind">youtube</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="layer__footer">
+                            <ul>
+                                <li class="lang bi ico__chevron-down">한국/한국어</li>
+                                <li class=""><a href="#">매장찾기</a></li>
+                            </ul>
+                            <div class="lang__select">
+                                <ul>
+                                    <li><a href="#" class="on"><span>한국/한국어</span></a></li>
+                                    <li><a href="#"><span>International / English</span></a></li>
+                                    <li><a href="#"><span>中文</span></a></li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search__wrap layer__wrap">
+                    <div class="layer__inner">
+                        <div class="layer__header">
+                            <h1 class="nav__logo"><span class="blind">MAMONDE</span></h1>
+                            <div class="right">
+                                <button type="button" class="bi ico__x close__btn"><span class="blind">닫기</span></button>
+                            </div>
+                        </div>
+                        <div class="layer__container">
+                            <div class="seach__area">
+                                <input type="text" id="seach" placeholder="검색어를 입력해 주세요" />
+                                <label for="seach">검색</label>
+                            </div>  
+                            <div class="keyword__list__area">
+                                <b class="tit">추천 검색어</b>
+                                <ul class="keyword__list">
+                                    <li>포어슈링커</li>
+                                    <li>바쿠치올</li>
+                                    <li>딥클렌징밤</li>
+                                    <li>로즈마스크</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button type="button" class="close__btn bi ico__chevron-down">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- main -->
+        <main id="container">
+            <!-- contents--01 -->
+            <div id="contents01" class="contents contents--01">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_07.jpg" alt="플로라 글로우 로즈 리퀴드 마스크"  title="플로라 글로우 로즈 리퀴드 마스크"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>플로라 글로우<br/>
+                                            로즈 리퀴드 마스크</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_08.jpg" alt="플로라 글로우 로즈 스무딩 크림"  title="플로라 글로우 로즈 스무딩 크림"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>플로라 글로우<br/>
+                                            로즈 스무딩 크림</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_09.jpg" alt="포어 슈링커 바쿠치올 세럼"  title="포어 슈링커 바쿠치올 세럼"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>포어 슈링커<br/>
+                                            바쿠치올 세럼</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_07.jpg" alt="어메이징 딥 민트 클렌징 폼"  title="어메이징 딥 민트 클렌징 폼"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>어메이징 딥<br/>
+                                            민트 클렌징 폼</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_08.jpg" alt="포어 슈링커 바쿠치올 패드"  title="포어 슈링커 바쿠치올 패드"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>포어 슈링커<br/>
+                                            바쿠치올 패드</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img__wrap">
+                                <img src="./../images/img_09.jpg" alt="포어 슈링커 바쿠치올 패드"  title="포어 슈링커 바쿠치올 패드"/>
+                            </div>
+                            <div class="contents__inner">
+                                <a href="#">
+                                    <div class="title__wrap">
+                                        <h2>포어 슈링커<br/>
+                                            바쿠치올 패드</h2>
+                                        <p>어느 각도에서나 매끈하게 빛나는 엔젤링 결광 피부</p>
+                                        <button class="more__btn">자세히 보기</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next con01"></div>
+                    <div class="swiper-button-prev con01"></div>
+                    <div class="progress-area">
+                        <div class="swiper-pagination con01"></div>
+                        <button type="button" class="stop__btn bi ico__pause-fill"><span class="blind">일시정지</span></button>
+                    </div>
+                </div>
+                 
+
+            </div>
+
+            <!-- contents--02 -->
+            <div id="contents02" class="contents contents--02">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>HYPER FLORA의 힘으로<br/>
+                            틔워<i class="symbol"><span class="symbol__item"><span class="blind">심볼 아이콘</span></span></i>나답게
+                        </h2>
+                        <p class="more__btn"><a href="#">브랜드 스토리 더 알아보기</a></p>
+                    </div>
+                </div>
+                <div class="video__wrap img__wrap">
+                    <!-- * 비디오 대신 이미지로 대체하였습니다 -->
+                    <img src="./../images/img_07.jpg" alt="비디오 대신 이미지로 대체하였습니다" title="비디오 대신 이미지로 대체하였습니다"/>
+                </div>
+            </div>
+
+            <!-- contents--03 -->
+            <div id="contents03" class="contents contents--03">
+                <div class="contents__inner">
+                    <a href="#">
+                        <div class="title__wrap">
+                            <h2>FLORA GLOW ROSE</h2>
+                            <p>마몽드 수분 광 유니버스</p>
+                            <button class="more__btn more__btn--white">자세히 보기</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- contents--04 -->
+            <div id="contents04" class="contents contents--04">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>For #My Skin</h2>
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper-wrap">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img__wrap">
+                                            <img src="./../images/img_01.jpg" alt="어메이징 딥 민트 클렌징밤"  title="어메이징 딥 민트 클렌징밤"/>
+                                            <img class="hover__img" src="./../images/img_10.jpg" alt="딥클렌징" title="딥클렌징"/>
+                                            <span class="hashtag">딥클렌징</span>
+                                        </div>
+                                        <div class="tit__wrap">
+                                            <span class="hashtag">딥클렌징</span>
+                                            <h3 class="tit">어메이징 딥 민트 클렌징밤</h3>
+                                            <p>모공피지연화 클렌징밤</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img__wrap">
+                                            <img src="./../images/img_03.jpg" alt="포어 슈링커 바쿠치올 크림"  title="포어 슈링커 바쿠치올 크림"/>
+                                            <img class="hover__img" src="./../images/img_11.jpg" alt="모공축소" title="모공축소"/>
+                                            <span class="hashtag">모공축소</span>
+                                        </div>
+                                        <div class="tit__wrap">
+                                            <span class="hashtag">모공축소</span>
+                                            <h3 class="tit">포어 슈링커 바쿠치올 크림</h3>
+                                            <p>모공 슈링크*효과 크림 하나로</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img__wrap">
+                                            <img src="./../images/img_02.jpg" alt="블루 아줄렌 클라우드 토너"  title="블루 아줄렌 클라우드 토너"/>
+                                            <img class="hover__img" src="./../images/img_10.jpg" alt="강력진정" title="강력진정"/>
+                                            <span class="hashtag">강력진정</span>
+                                        </div>
+                                        <div class="tit__wrap">
+                                            <span class="hashtag">강력진정</span>
+                                            <h3 class="tit">블루 아줄렌 클라우드 토너</h3>
+                                            <p>진정 강한 마찰리스 구름토너</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <div class="img__wrap">
+                                            <img class="scale" src="./../images/img_04.jpg" alt="플로라 글로우 로즈 리퀴드 마스크"  title="플로라 글로우 로즈 리퀴드 마스크"/>
+                                            <img class="hover__img" src="./../images/img_11.jpg" alt="피부결광" title="피부결광"/>
+                                            <span class="hashtag">피부결광</span>
+                                        </div>
+                                        <div class="tit__wrap">
+                                            <span class="hashtag">피부결광</span>
+                                            <h3 class="tit">플로라 글로우 로즈 리퀴드 마스크</h3>
+                                            <p>어느 각도에서도 빛나는 엔젤링 결광</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next con04"></div>
+                        <div class="swiper-button-prev con04"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer">
+            <button type="button" class="bi ico__chevron-down footer__btn">© AMOREPACIFIC. All Rights Reserved.</button>
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <ul class="sns__list">
+                        <li class="bi ico__facebook"><a href="#"><span class="blind">facebook</span></a></li>
+                        <li class="bi ico__instagram"><a href="#"><span class="blind">instagram</span></a></li>
+                        <li class="bi ico__youtube"><a href="#"><span class="blind">youtube</span></a></li>
+                    </ul>
+                    <ul class="footer__menu__list">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">서비스이용약관</a></li>
+                        <li><a href="#" class="ft--bold">개인정보처리방침</a></li>
+                        <li><a href="#">영상정보처리방침</a></li>
+                        <li><a href="#">뷰티포인트</a></li>
+                    </ul>
+                    <div class="servic__center__wrap">
+                        <p class="servic__center">고객서비스센터(수신자요금부담) <a href="tel:080-023-5454">080-023-5454</a> <span>(월~금 : AM 09:00 ~ PM 06:00)</span></p>
+                        <div class="mark">
+                            <img src="./../images/common/wa_mark.png" alt="웹접근성 인증마크" title="웹접근성 인증마크"/>
+                        </div>
+                    </div>
+                    <p class="copyright">© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+                    <p>* 이 사이트는 포트폴리오 용도로 제작했으며, 상업적 용도가 없습니다.</p>
+                </div>
+                <div class="lang__selet__wrap">
+                    <button type="button" class="bi ico__caret-down-fill lang__btn">한국 / 한국어</button>
+                    <div class="lang__selet">
+                        <ul class="lang__selet__list">
+                            <li><a href="#">한국 / 한국어</a></li>
+                            <li><a href="#">International / English</a></li>
+                            <li><a href="#">中文</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+   
+    <script>
+        
+
+        // contents--01 swiper
+        var con01swiper = new Swiper(".contents--01 .mySwiper", {
+            slidesPerView:1,
+            spaceBetween: 0,
+            parallax: true, 
+            loop:true,
+            speed:1500,
+            watchOverflow: true,
+            grabCursor: true,
+            allowTouchMove : true,
+            autoplay:{
+                delay:8000,
+            },
+            navigation: {
+                nextEl: ".con01.swiper-button-next",
+                prevEl: ".con01.swiper-button-prev",
+            },
+            pagination: {
+                el: ".con01.swiper-pagination",
+                clickable: true,
+            },
+            on:{
+                init:(self)=>{
+                    self.el.querySelectorAll('.swiper-slide .img__wrap').forEach(slide => {
+                        slide.setAttribute('data-swiper-parallax', '50%');
+                    });
+                },
+            },
+        });
+
+        // swiper 정지/재생
+        document.querySelector(".contents--01 .stop__btn").addEventListener("click",swiperStop);
+        function swiperStop(btn){
+            const isBtn = btn.target;
+            const isStart = isBtn.classList.contains("start__btn"); // 정지 상태인지 확인
+            const swiper = isBtn.closest(".swiper").swiper; // 대상 swiper
+
+            if(!isStart){ // 정지
+                isBtn.classList.add("start__btn"); 
+                swiper.autoplay.stop();
+                isBtn.querySelector(".blind").innerText = "재생";
+            }else{ // 재생
+                isBtn.classList.remove("start__btn");
+                swiper.autoplay.start();
+                isBtn.querySelector(".blind").innerText = "일시정지";
+            }
+            
+        };
+
+        // contents--04 swiper
+        let con04swiper = undefined;
+        var isCon04swiper = (isTablet) => {
+            if(!isTablet && con04swiper == undefined){
+                con04swiper = new Swiper(".contents--04 .mySwiper", {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                    watchOverflow: true,
+                    navigation: {
+                        nextEl: ".con04.swiper-button-next",
+                        prevEl: ".con04.swiper-button-prev",
+                    },
+                });
+            }else if(isTablet && con04swiper != undefined){
+                con04swiper.destroy();
+                con04swiper = undefined;
+            }
+        };
+        
+        // 리사이즈 이벤트
+        window.addEventListener("resize",resizeEvents);
+        function resizeEvents(){
+            const wW = window.innerWidth;
+            const tablet = 1023;
+            const isTablet = wW <= tablet;
+
+            isCon04swiper(isTablet);
+            
+        }resizeEvents();
+    </script>
+</body>
+</html>

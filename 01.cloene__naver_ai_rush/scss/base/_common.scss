@@ -1,0 +1,184 @@
+@use "./var" as *;
+@use "./mixin" as *;
+
+// common
+html,body{
+    &.unable{overflow: hidden !important;}
+}
+body{overflow-x: hidden; overflow-y: auto; font-family: "NanumSquareNeo","Gulim","굴림", "Dotum", "돋움", "Batang", "바탕","Arial", sans-serif; font-size: $font-size--16; letter-spacing: -0.025rem; color: $font-color--black1a; background-color: $color--white;}
+a{display: inline-block; font: inherit; color: inherit;}
+button{font: inherit; color: inherit;}
+a:hover,button:hover{cursor: pointer;}
+::after,::before{padding: 0; margin: 0; font-size:inherit;}
+input{font: inherit; box-sizing: border-box;}
+input::placeholder{color: $font-color--placeholder;}
+article{display: block;}
+
+// 공통 class 
+.blind{overflow: hidden; position: absolute; width: 0px; height: 0px; clip-path: circle(0);}
+.ft--bold{font-weight: $font-weight--800;}
+.ellipsis{overflow: hidden; text-overflow: ellipsis; display: inline-block; text-wrap: nowrap; white-space: nowrap;}
+
+
+// icon
+.bi::before { // 부트스트랩 아이콘
+    display: inline-block;
+    vertical-align: -.125em;
+    font-weight: inherit !important;
+    // background-size:  1rem 1rem;
+}
+.ico__search::before{content: "\F52A"; text-align: center; line-height:inherit;}
+.ico__close::before{content: "\F659"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__arrow-right::before{content: "\F138"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__arrow-left::before{content: "\F12F"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__arrow-up-right::before{content: "\F144"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__arrow-down-circle::before{content: "\F119"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__chevron-down::before{content: "\F282"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__chevron-right::before{content: "\F285"; text-align: center; vertical-align: middle; line-height:inherit;}
+.ico__box-arrow-up::before{content: "\F1C6"; text-align: center; vertical-align: middle; line-height:inherit;}
+
+// button status
+.ico__arrow-left::before, .ico__arrow-right::before{transition: $ico__arrow--transition;}
+.more__btn,.list__btn,.swiper-button-next,.swiper-button-prev{
+    &.ico__arrow-right:hover::before{transform: $ico__arrow-right--hover;}
+    &.ico__arrow-left:hover::before{transform: $ico__arrow-left--hover;}
+    &:hover::before{
+        .ico__arrow-right{transform: $ico__arrow-right--hover;}
+        .ico__arrow-left{transform: $ico__arrow-left--hover;} 
+    }
+}
+
+
+// list style
+.list__style--bullet > li{
+    display: flex;
+    &::before{content: ""; position: relative; display: inline-block; line-height: inherit; border-radius: 50%;}
+}
+
+.number__list {
+    counter-reset: count; 
+    > li{
+        counter-increment: count;
+        &::before{content: counter(count); font:inherit; line-height: inherit;}
+    }
+}
+.hashtag__list>li{
+    display: flex; 
+    &::before{content: "#"; font:inherit; line-height: inherit;}
+}
+
+// tab
+.tab__list li:hover{cursor: pointer;}
+
+.m__br--show{display: $display--none;}
+.m__br--hide{display: $display--block;}
+.t__br--show{display: $display--none;}
+.t__br--hide{display: $display--block;}
+
+.m__text--show{display: $display--none;}
+.m__text--hide{display: $display--inline-block;}
+.t__text--show{display: $display--none;}
+.t__text--hide{display: $display--inline-block;}
+
+
+h2,h3{
+    font-weight: $font-weight--800;
+    &.m__text--hide,&.t__text--hide{display: $display--block;}
+}
+
+.start__btn{
+    @include flexCenter;
+    width: 258px; height: 70px; font-size: $font-size--18; font-weight: $font-weight--800; color: $font-color--white; background: $color--point-gradient;
+}
+
+// swiper
+.swiper-slide img{ display: block; width: 100%; height: 100%; object-fit: cover;}
+.swiper-button-next, .swiper-button-prev{
+    margin-top: unset; font-weight: $font-weight--400; color: $font-color--black1a;
+    &::before{box-sizing: border-box;}
+    &::after{display: none;}
+}
+.swiper-button-disabled{color: $button--bg--disabled;}
+.swiper-pagination-bullet-active{background-color: $color--black;}
+
+
+// 저작권 표기
+.copyright__notice{margin-top:40px; opacity: 0.7;}
+
+// 이미지 
+.img__wrap {
+    overflow: hidden; height: fit-content;
+    img{display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease-in-out;}
+}
+
+// sub common
+.sub__contents{
+    padding-top: $height--height;
+    .section__inner{@extend %containerCenter;}
+
+    .img__wrap{
+        position: relative;
+        &::before{content: ""; position: absolute; width: 100%; height: 100%; border: 1px solid $border-color--lightgrayd9--opacity--06; box-sizing: border-box;}
+    }
+}
+.view__bottom{
+    >p{margin: 27px 0 40px; line-height: $line-height--33;  font-size: $font-size--24; font-weight: $font-weight--800;}
+    .list__btn::before{font-size: 33px; margin-right: 12px;}
+}
+
+
+
+// media
+@include tablet {
+    body{font-size: $font-size--13;}
+
+    .t__text--show{display: $display--inline-block;}
+    .t__text--hide{display: $display--none;}
+    .t__br--show{display: $display--block;}
+    .t__br--hide{display: $display--none;}
+
+    h2,h3{
+        &.t__text--show{display: $display--block;}
+    }
+
+    .start__btn{  width: 207px; height: 56px; font-size: $font-size--15; }
+
+    // sub common
+    .sub__contents{padding-top: $height--height--tablet;}
+
+    .view__bottom{
+        >p{margin: 20px 0; line-height: 21px; font-size: $font-size--15;}
+        .list__btn::before{font-size: 21px; margin-right: 12px;}
+    }
+
+    // swiper
+    .swiper {
+        padding-bottom: 26px;
+        .swiper-pagination{bottom: 0;}
+        .swiper-pagination-bullet{
+            width: 6px; height: 6px; 
+            .swiper-pagination-bullet{margin: 0 3px;}
+        }
+    }
+
+}
+
+@include mobile{
+    .m__text--show{display: $display--inline-block;}
+    .m__text--hide{display: $display--none;}
+    .m__br--show{display: $display--block;}
+    .m__br--hide{display: $display--none;}
+    
+    h2,h3{
+        &.m__text--show{display:$display--block;}
+        &.m__text--hide{display: $display--none;}
+    }
+
+    .start__btn{  width: 195px; height: 50px; font-size: $font-size--12; }
+
+
+    // sub common
+    .sub__contents{padding-top: $height--height--mobile;}
+
+}
+

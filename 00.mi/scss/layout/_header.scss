@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+#header{
+    z-index: 1000; position: fixed; top: 0; left: 0;
+    width: 100%; height: $header--height--desktop;
+    backdrop-filter: blur(2px);
+
+    transition: all .5s ease-in-out .2s;
+}
+
+.header__inner{
+    @include contentsCenter;
+    @include flexSpaceBtweenCenter;
+    height: 100%;
+    
+}
+
+h1{
+    @include logoReverse;
+    width:fit-content; 
+}
+
+.menu__btn{
+    display: none;
+    width: 30px; height: 30px;
+    position: relative; z-index:1;
+    &::before{content: ""; position: absolute; top:calc(50% - 6px); left: 0; width: 100%; height: 3px; background-color:$border-color--default; transform-origin: center center; transition: all .3s ease-in-out .1s;}
+    &::after{content: ""; position: absolute; bottom:calc(50% - 6px);  left: 0; width: 100%; height: 3px; background-color:$border-color--default; transform-origin: center center; transition: all .3s ease-in-out .1s;}
+
+    &.close__btn{
+        &::before{transform: rotate(45deg); top:calc(50% - 2px);}
+        &::after{transform: rotate(-45deg); bottom:calc(50% - 1px);}
+    }
+}
+.gnb{
+    @include flexSpaceBtweenCenter(20px);
+}
+
+
+
+@include mobile{
+    #header{height: $header--height--mobile;}
+    h1{@include logoReverse($logo--size--mobile);}
+
+    .menu__btn{display: block;}
+    .gnb__wrap{
+        position: absolute; right: 0; top:-100vh; opacity: 1; 
+        width: 100%; height: 100vh; background-color:transparent;
+        transition: background-color .3s ease-in-out 0s, top .3s ease-in-out .2s, opacity .3s ease-in-out .2s;
+        
+        &.active{
+            top:0; opacity: 1; background-color: rgba($color--black01,0.2);
+            transition: background-color .3s ease-in-out .3s, top .3s ease-in-out , opacity .3s ease-in-out;
+        }
+        
+        nav{
+            @include contentsCenter; text-align: center;
+            padding-top: $header--height--mobile;
+            padding-bottom:calc($header--height--mobile - ($header--height--mobile/3));
+            width: 100%; height: auto; background-color: $color--whitefb;}
+        .gnb{flex-direction: column; }
+    }
+}
