@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일간의 날씨예보</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./../css/index.css" type="text/css" />
+
+    <!-- js -->
+    <script src="./../js/lib/gsap.min.js"></script>
+    <script src="./../js/lib/ScrollTrigger.min.js"></script>
+    <script src="./../js/lib/ScrollToPlugin.min.js"></script>
+    <script type="module" src="./../js/weather.js"></script>
+    <script src="./../js/gsap.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="header__inner">
+                <nav class="gnb">
+                    <ul>
+                        <li class="on"><a href="#contents1">오늘</a></li>
+                        <li><a href="#contents2">내일</a></li>
+                        <li><a href="#contents3">모레</a></li>
+                    </ul>
+                </nav>
+                <div class="location">
+                    <p>현재 위치: <span class="location__name">대한민국 경기도 시흥시 신천동</span></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- container -->
+        <main id="container">
+            <section id="contents1" class="contents contents--today">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>오늘</h2>
+                    </div>
+                    <div id="todayWeather" class="weather">
+                        <span></span>
+                        <div class="svg__wrap"></div>
+                    </div>
+                    <div class="weather__summary__wrap">
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--temp">
+                                <li class="temp_c">현재온도(°C):<span></span></li> 
+                                <li class="feelslike_c">체감온도(°C):<span></span></li>
+                                <li class="mintemp_c">최저온도(°C):<span></span></li>
+                                <li class="maxtemp_c">최고온도(°C):<span></span></li>
+                                <li class="avgtemp_c">평균온도(°C):<span></span></li>
+                            </ul>
+                            
+                            <ul class="weather__summary__list weather__summary__list--avg">
+                                <li class="avghumidity">평균 습도:<span></span></li>
+                                <li class="humidity">습도:<span></span></li>
+        
+                                <li class="totalprecip_mm">총 강수량(mm):<span></span></li>
+                                <li class="precip_mm">강수량(mm):<span></span></li>
+                                <li class="daily_chance_of_rain">일일 강수확률:<span></span></li>
+                                <li class="chance_of_rain">강수확률:<span></span></li>
+        
+                                <li class="totalsnow_cm">총 강설량(cm):<span></span></li>
+                                <li class="snow_cm">강설량(cm):<span></span></li>
+                                <li class="daily_chance_of_snow">일일 강설확률:<span></span></li>
+                                <li class="chance_of_snow">강설확률:<span></span></li>
+                            </ul>
+                        </div>
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--time">
+                                <li class="sunrise">일출시간:<time></time></li>
+                                <li class="sunset">일몰시간:<time></time></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contents2" class="contents">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>내일</h2>
+                    </div>
+                    <div id="tomorrowWeather" class="weather">
+                        <span></span>
+                        <div class="svg__wrap"></div>
+                    </div>
+                    <div class="weather__summary__wrap">
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--temp">
+                                <li class="mintemp_c">최저온도(°C):<span></span></li>
+                                <li class="maxtemp_c">최고온도(°C):<span></span></li>
+                                <li class="avgtemp_c">평균온도(°C):<span></span></li>
+                            </ul>
+                            <ul class="weather__summary__list weather__summary__list--avg">
+                                <li class="avghumidity">평균 습도:<span></span></li>
+        
+                                <li class="totalprecip_mm">총 강수량(mm):<span></span></li>
+                                <li class="daily_chance_of_rain">일일 강수확률:<span></span></li>
+        
+                                <li class="totalsnow_cm">총 강설량(cm):<span></span></li>
+                                <li class="daily_chance_of_snow">일일 강설확률:<span></span></li>
+                            </ul>
+                        </div>
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--time">
+                                <li class="sunrise">일출시간:<time></time></li>
+                                <li class="sunset">일몰시간:<time></time></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contents3" class="contents">
+                <div class="contents__inner">
+                    <div class="title__wrap">
+                        <h2>모레</h2>
+                    </div>
+                    <div id="dayAfterTomorrowWeather" class="weather">
+                        <span></span>
+                        <div class="svg__wrap"></div>
+                    </div>
+                    <div class="weather__summary__wrap">
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--temp">
+                                <li class="mintemp_c">최저온도(°C):<span></span></li>
+                                <li class="maxtemp_c">최고온도(°C):<span></span></li>
+                                <li class="avgtemp_c">평균온도(°C):<span></span></li>
+                            </ul>
+                            <ul class="weather__summary__list weather__summary__list--avg">
+                                <li class="avghumidity">평균 습도:<span></span></li>
+        
+                                <li class="totalprecip_mm">총 강수량(mm):<span></span></li>
+                                <li class="daily_chance_of_rain">일일 강수확률:<span></span></li>
+        
+                                <li class="totalsnow_cm">총 강설량(cm):<span></span></li>
+                                <li class="daily_chance_of_snow">일일 강설확률:<span></span></li>
+                            </ul>
+                        </div>
+                        <div class="weather__summary">
+                            <ul class="weather__summary__list weather__summary__list--time">
+                                <li class="sunrise">일출시간:<time></time></li>
+                                <li class="sunset">일몰시간:<time></time></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer__inner">
+                <p class="copyright">Copyright &copy; 2024 <span class="logo"><span class="text--reverse">m</span>I</span>. All rights reserved.</p>
+                <p>* 이 사이트는 포트폴리오 용도로 제작했으며, 상업적 용도가 없습니다.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

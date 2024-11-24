@@ -1,0 +1,174 @@
+/* common */
+.svg__wrap.stop *{animation: unset !important;}
+
+.cloud {
+    opacity: 0;
+    animation-name: cloud;
+    animation-duration:0.5s;
+    animation-delay:0.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:1;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+}
+@keyframes cloud {
+    from{
+        transform: translateX(15%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* rainy */
+#svgRainy .rain [class*="raindrop"]{
+    opacity: 0;
+    animation-name: raindrop;
+    animation-duration: 1.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+#svgRainy .rain .raindrop--1, #svgRainy .rain .raindrop--3, #svgRainy .rain .raindrop--5{
+    animation-delay: 0.3s;
+}
+#svgRainy .rain .raindrop--2, #svgRainy .rain .raindrop--4{
+    animation-delay: 1.2s;
+} 
+
+@keyframes raindrop {
+    0%{
+        transform: translate(0);
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-10%,15%);
+        opacity: 0;
+    }
+}
+
+
+/* stormy */
+#svgStormy .thunder{
+    opacity:0;
+    animation-name: thunder;
+    animation-duration:2.3s;
+    animation-delay:0.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite;
+    animation-direction:normal;
+}
+
+#svgStormy .rain [class*="raindrop"]{
+    opacity: 0;
+    animation-name: raindrop02;
+    animation-duration: 1.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+#svgStormy .rain .raindrop--1, #svgStormy .rain .raindrop--3, #svgStormy .rain .raindrop--5{
+    animation-delay: 0.3s;
+}
+#svgStormy .rain .raindrop--2, #svgStormy .rain .raindrop--4{
+    animation-delay: 1s;
+} 
+
+@keyframes thunder {
+    0%{opacity: 0;}
+    1%{opacity: 1;}
+    40%{opacity: 0.3;}
+    70%{opacity: 1;}
+    80%{opacity: 0.3;}
+    100%{opacity: 1;}
+}
+@keyframes raindrop02 {
+    0%{
+        transform: translate(0);
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-5%,8%);
+        opacity: 0;
+    }
+}
+
+
+/* snowy */
+#svgSnowy {height: calc(100% - 10rem);}
+#svgSnowy .snow{
+    opacity: 0;
+    animation-name: snow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+#svgSnowy .snow--1{animation-delay: 0.3s;}
+#svgSnowy .snow--2{animation-delay: 1.5s;}
+#svgSnowy .snow--3{animation-delay: 0.9s;}
+@keyframes snow {
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(15%);
+        opacity: 0;
+    }
+}
+
+/* cloudy */
+#svgCloudy {height: calc(100% - 3.5rem);}
+#svgCloudy .cloud{animation-duration: 1.6s;}
+#svgCloudy .cloud--top{animation-delay: 0.7s;}
+
+
+/* partly_cloudy */
+#svgPartlyCloudy{
+    height: calc(100% - 4rem);
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode: both;
+}
+#svgPartlyCloudy .cloud{
+    animation:unset; opacity: 1;
+}
+@keyframes opacity {
+    from{opacity: 0; }
+    to{opacity: 1;}
+}
+
+/* sunny */
+#svgSunny{height: calc(100% - 6rem);}
+#svgSunny .sunray [class*="sunray__line--"]{
+    animation-name: opacity;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    animation-fill-mode: both;
+}
+#svgSunny .sunray rect:nth-child(odd){animation-name: opacity_fast; animation-delay: 0.6s;}
+#svgSunny .sunray rect:nth-child(even){ animation-delay: 0.8s;}
+
+@keyframes opacity_fast {
+    0%{opacity:0;}
+    10%{opacity:1;}
+}

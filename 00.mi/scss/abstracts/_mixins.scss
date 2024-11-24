@@ -36,11 +36,14 @@
   }
 }
 
+
 // 추가
+// layout
 @mixin contentsCenter{
   max-width: $max-width; width: 100%; margin: $contents--center; padding: $contents--padding;
 }
 
+// flex
 @mixin flexSpaceBtweenCenter($gap:unset){
   display: flex; justify-content: space-between; align-items: center; gap:$gap;
 }
@@ -51,6 +54,7 @@
   display: flex; align-items: center; gap:$gap;
 }
 
+// border
 @mixin borderAllSolid($width: 1px, $color: $border-color--default){
   border: $width solid $color;
 }
@@ -83,7 +87,6 @@ $logo-reverse--animation: reverseY 0.5s ease 0.5s both;
   to{@include rotateXReverse(0deg);}
 
 }
-
 
 
 @mixin titRightBorder($gap:10px,$padding-right:8px,$width:1px,$height:12px){

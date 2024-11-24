@@ -1,0 +1,55 @@
+.contents{display: block; width:100%; height: 100vh;  padding-top: 10rem; 
+    background-image: linear-gradient(160deg,#135EBC,#419ee6,#cfdae2);
+}
+.contents.rain{background-image: linear-gradient(100deg,#7B99A1, #30596e);}
+
+.contents__inner{padding-top: 3.5rem; display: flex; flex-wrap: wrap; align-items:flex-start;}
+
+.title__wrap{flex:1 1 100%; margin-bottom: 3rem;}
+.title__wrap h2{width: 60%; text-align: center; color: inherit;}
+
+.weather{position: relative; flex:0 1 60%; height: 60vh; padding:0 5rem; text-align: center;}
+.weather span{display: block; position: absolute; bottom: calc(100% + 3.5rem); left:calc( 50% + 4.5rem); padding-left: 1rem; font-size:2rem;}
+.weather span:not(:empty)::before{content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 1px; height: 1.6rem; background-color: #fff;}
+.weather .svg__wrap{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+.weather .svg__wrap:empty::before{content: "위치 액세스를 허용하여 \A현재 위치의 날씨를 확인해보세요!";white-space: pre; word-break: keep-all; font-size:2rem; line-height: 1.4;}
+.weather svg{ padding-bottom: 3rem;  overflow: unset !important;}
+
+.weather__summary__wrap{flex:1 0 40%; align-self: center; }
+.weather__summary{z-index: 100; position: relative; padding: 3rem 1.5rem 2.4rem 2.4rem; border-radius:0.7rem; color: #fff; background-color: rgba(0,0,0,.5); box-shadow: 0.8rem 0.8rem 0 rgba(0,0,0,0.75); backdrop-filter: blur(5px);}
+.weather__summary:not(:first-child){margin-top: 1.5rem;}
+.weather__summary__list { display: flex; flex-wrap: wrap; align-items: flex-end; font-size: 1.8rem; gap: 2rem;}
+.weather__summary__list:not(:last-child){position: relative; margin-bottom: 2rem; padding-bottom: 2rem; }
+.weather__summary__list:not(:last-child)::after{content: ''; position: absolute; bottom: 0; left: 0; width: calc(100% - 0.9rem); height: 1px; border-bottom: 1px solid #dadada;}
+.weather__summary__list li{flex: 1 0 calc(50% - 10px);}
+.weather__summary__list li:nth-child(2n+1){border-right: 1px solid #dadada;}
+.weather__summary__list li:last-child{border-right: none;}
+.weather__summary__list li span, .weather__summary__list li time{padding-left:8px; font-weight: 600;}
+
+
+
+
+/* media */
+@media screen and (max-width:1199px) {
+    .title__wrap h2{width: 45%; text-align: center;}
+    .weather__summary__wrap{flex:1 0 55%; }
+    .weather__summary__list{gap: 1.5rem;}
+
+    .weather{ flex:0 1 45%; padding:0 3rem 0 0;}
+}
+@media screen and (min-width:768px){
+    .contents{min-height: 720px;}
+}
+@media screen and (max-width:767px) {
+    .contents {width: 100%; height:auto; min-height: 100vh; padding-top: 11.6rem; padding-right: 0; padding-bottom: 4rem;}
+    .contents__inner{display: block; padding-top: 3.5rem;}
+
+    .title__wrap{text-align: center;}
+    .title__wrap h2{width: 100%;}
+
+    .weather__summary__wrap{margin-top: 3rem; transform: translateX(-0.3rem);}
+    .weather__summary__list{gap: 1rem;}
+
+    .weather{height: 30vh; padding-right: 0; }
+    .weather svg{padding: 0;}
+}

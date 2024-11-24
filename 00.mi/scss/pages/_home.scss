@@ -67,7 +67,11 @@
             margin-bottom: 20px;
             span{font-size: 20px;}
         }
-        p:nth-of-type(2){max-width: 600px; margin: 0 auto;}
+        p{
+            margin: 0 auto;
+            &:nth-of-type(2){max-width: 600px; }
+            &:nth-of-type(3){max-width: 630px;}
+        }
         .mt{margin-top: 15px;}
         
     }
@@ -156,13 +160,21 @@
         }
         .title__link{
             flex-basis: 100%; 
-            margin:8px 0 30px;
+            margin-bottom:30px;
             padding:0 20px 0 10px;
         }
         .project__summary{margin-top: 15px ; padding-left: 10px;}
-        .project__summary__list li{
+        .project__summary__list>li{
             @include titRightBorder; 
             &:not(:first-child){margin-top: 5px;}
+        }
+        .hashtag_list{ 
+            @include flexAlignCenter(5px); flex-wrap: wrap;
+            margin-bottom: 5px; font-size: 14px;
+            li{
+                flex-shrink: 1; gap: 0;
+                &::before{content: "#";}
+            }
         }
 
         .page{
